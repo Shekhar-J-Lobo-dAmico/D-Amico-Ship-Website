@@ -1,0 +1,291 @@
+  <html> 
+	<style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;   /* ✅ correct value */
+        }
+		body{
+            /* background-image: url('/img/gp.jpg'); */
+            /* background-color: #F4DB04; */
+            background-color: #000000;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center; 
+        }
+
+        #overlay {
+            position: absolute;
+            inset: 0;                 /* top:0 right:0 bottom:0 left:0 */   
+            display: flex;
+            flex-direction: column;
+            justify-content: center;  /* vertical center */
+            align-items: center;      /* horizontal center */
+            text-align: center;
+        }
+      
+        #logo {
+            font-family: 'B074000D', serif;
+            color: white;
+            font-size: 5dvh;
+        }
+
+        @media screen and (min-width: 768px) {
+            #logo {
+                width: fit-content; /* Full width on small screens */ 
+                margin-top:0%;
+            }
+
+        }
+
+        /* Styles for screens larger than or equal to 768px (e.g., tablets and desktops) */
+        @media screen and (min-width: 1200px) {
+            /* body{
+                background-image: url('/img/damico-image-bridge-ok.jpg');
+                background-size: cover;
+            } */
+        
+            #logo {
+                width: 100%; /* Fixed width on large screens */
+                margin-top:0%;
+                margin: auto;
+                min-height: auto;		
+            }
+
+        }
+
+	</style>
+   <body [style.backgroundImage]="'url(' + currentBg + ')'">
+
+		<!-- body -->
+		<div #canvasContainer class="three-container" style="max-height: 100%;">
+            <div id="overlay" style="text-align: center;">
+                <a (click)="enterHome()">
+                    <img src="assets/img/damico_logo-removebg-preview_flag.png" style="text-align: end; width: auto;  height: 100px"><br>
+                    <label id="logo">d'Amico Ship Ishima India Private Limited</label>
+                    <br><br>
+                <span class="badge rounded-pill bg-light" id="button" style="width: fit-content; font-size: 2dvh; margin-top: 20px;">Enter</span></a>
+            </div>
+        </div>
+
+        <!-- <script type="importmap">
+            {
+				"imports": {
+					"three": "../../../../node_modules/three/build/three.module.js"
+				}
+            }
+        </script>
+        <script type="module">
+
+            import * as THREE from 'three';
+            import { OrbitControls } from '';
+	        import { GLTFLoader } from '../../../../node_modules/three/examples/jsm/loaders/GLTFLoader.js';
+
+            let scene = new THREE.Scene();
+            let camera = new THREE.PerspectiveCamera(60,window.innerWidth/window.innerHeight,0.1,1000);
+
+            camera.position.z = 8;
+
+            let renderer = new THREE.WebGLRenderer({antialias:true});
+            renderer.setSize(window.innerWidth,window.innerHeight);
+            renderer.setClearColor(0x000000, 0);
+			document.body.appendChild( renderer.domElement );
+            renderer.outputColorSpace = THREE.SRGBColorSpace;
+
+            var radius = (Math.min(window.innerWidth, window.innerHeight))*0.03;
+            // if(window.innerWidth < window.innerHeight)
+            //     radius=2;
+			// check when the browser size has changed and adjust the camera accordingly
+			window.addEventListener( 'resize', function( )
+			{
+		      	var WIDTH = window.innerWidth;
+				var HEIGHT = window.innerHeight;
+		      	renderer.setSize( WIDTH, HEIGHT );
+		      	camera.aspect = WIDTH / HEIGHT;
+		      	camera.updateProjectionMatrix( );
+                radius = (Math.min(window.innerWidth, window.innerHeight))*0.003;
+            } );
+            
+            const particleCount = 50000;
+
+            const positions = new Float32Array(particleCount * 3);
+            const original = [];
+            const velocity = [];
+            const colors = new Float32Array(particleCount * 3);
+
+            console.log("radius: ",window.innerWidth, window.innerHeight, radius);
+        
+            for (let i = 0; i < particleCount; i++) {
+
+                const angle = (i / particleCount) * Math.PI * 2;
+                // const r = radius + Math.random() * 0.1; // width of the orbit
+
+                const r = Math.sqrt(Math.random()) * radius; // filled circle radius
+
+                const x = Math.cos(angle) * r;
+                const y = Math.sin(angle) * r;
+
+                positions[i*3] = x;
+                positions[i*3+1] = y;
+                positions[i*3+2] = 0;
+
+                original.push({ angle, r });
+                velocity.push(new THREE.Vector2());
+
+            }
+
+            const geo = new THREE.BufferGeometry();
+            geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+            const mat = new THREE.PointsMaterial({
+                size: 0.03,
+                color: 0xC0C0C0, //352254
+            });
+
+            const particles = new THREE.Points(geo, mat);
+            scene.add(particles);
+
+            camera.position.set(0,0,8);
+            camera.lookAt(0,0,0);
+
+            const mouse = new THREE.Vector2();
+            const raycaster = new THREE.Raycaster();
+            const plane = new THREE.Plane(new THREE.Vector3(0,0,1),0);
+
+            window.addEventListener("mousemove", e => {
+                mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+                mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
+            });
+
+            const clock = new THREE.Clock();
+            
+            //------ Star logo -------
+
+            const textureLoader = new THREE.TextureLoader();
+
+            const texture = textureLoader.load("../../../assets/img/StartLogo1-Photoroom.png");
+
+            texture.colorSpace = THREE.SRGBColorSpace;
+
+            const geometry = new THREE.PlaneGeometry(3,3);
+
+            const material = new THREE.MeshBasicMaterial({
+                map: texture,
+                transparent:true
+            });
+
+            const imagePlane = new THREE.Mesh(geometry, material);
+
+            scene.add(imagePlane);
+
+            // const logoImg = new Image();
+            // logoImg.src = "./img/logo2__1_-removebg-preview.png";
+
+            // const canvas = document.createElement("canvas");
+            // const ctx = canvas.getContext("2d");
+
+            // let imageData;
+
+            // logoImg.onload = () => {
+
+            //     canvas.width = logoImg.width;
+            //     canvas.height = logoImg.height;
+
+            //     ctx.drawImage(logoImg,0,0);
+
+            //     imageData = ctx.getImageData(0,0,canvas.width,canvas.height).data;
+
+            // };
+
+            // function isInsideLogo(x,y){
+
+            //     if(!imageData) return false;
+
+            //     // convert world coords to image coords
+            //     const scale = 60;   // adjust for your scene size
+
+            //     const px = Math.floor(canvas.width/2 + x*scale);
+            //     const py = Math.floor(canvas.height/2 - y*scale);
+
+            //     if(px<0 || py<0 || px>=canvas.width || py>=canvas.height)
+            //         return false;
+
+            //     const index = (py * canvas.width + px) * 4;
+
+            //     const alpha = imageData[index + 3];
+
+            //     return alpha > 20; // pixel is visible
+            // }
+
+            function animate(){
+                requestAnimationFrame(animate);
+                imagePlane.rotation.z -= 0.005;
+
+                // renderer.render(scene, camera);
+                const time = clock.getElapsedTime();
+                const pos = geo.attributes.position.array;
+
+                /* get mouse world point */
+                raycaster.setFromCamera(mouse, camera);
+                const hit = new THREE.Vector3();
+                raycaster.ray.intersectPlane(plane, hit);
+                raycaster.params.Points.threshold = 0.1;
+                for(let i=0;i<particleCount;i++){
+
+                    const i3 = i*3;
+
+                    /* ----- circular orbit ----- */
+                    const orbitAngle = original[i].angle + time * 0.2;
+
+                    const ox = Math.sin(orbitAngle) * original[i].r;
+                    const oy = Math.cos(orbitAngle) * original[i].r;
+
+                    /* ----- mouse displacement ----- */
+                    const dx = pos[i3] - hit.x;
+                    const dy = pos[i3+1] - hit.y;
+
+                    const dist = Math.sqrt(dx*dx + dy*dy);
+                    const influence = 0.6;      //hover radius
+
+                    if(dist < influence){
+                        const force = (1 - dist/influence) * 0.9;   //mouse force strength
+
+                        velocity[i].x += dx * force;
+                        velocity[i].y += dy * force;
+                    }
+
+                    /* ----- spring back to orbit ----- */
+                    velocity[i].x += (ox - pos[i3]) * 0.02;
+                    velocity[i].y += (oy - pos[i3+1]) * 0.02;
+
+                    /* damping */
+                    velocity[i].multiplyScalar(0.92);
+
+                    pos[i3] += velocity[i].x;
+                    pos[i3+1] += velocity[i].y;
+
+                    // if(isInsideLogo(pos[i3], pos[i3+1])){
+
+                    //     const dx = pos[i3];
+                    //     const dy = pos[i3+1];
+
+                    //     const push = 0.05;
+
+                    //     velocity[i].x += dx * push;
+                    //     velocity[i].y += dy * push;
+
+                    // }
+                }
+
+                geo.attributes.position.needsUpdate = true;
+
+                renderer.render(scene,camera);
+            }
+
+            animate();
+
+        </script> -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    </body>
+</html>

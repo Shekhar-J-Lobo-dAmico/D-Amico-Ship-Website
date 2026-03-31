@@ -1,0 +1,25 @@
+<div id="overlay">
+    <app-top-banner [title]='title'></app-top-banner>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+            <th scope="col">Sr. No. </th>
+            <th scope="col">Position</th>
+            <th scope="col">Location</th>
+            <th scope="col">Department</th>
+            <th scope="col">Required Experience</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let job of jobList, let i = index " class="table-secondary" (click)="jobSelected(job.pos)" style="max-height: 50px;">
+                <th>{{i+1}}</th>
+                <td>{{job.pos}}</td>
+                <td>{{job.location}}</td>
+                <td>{{job.department}}</td>
+                <td>{{job.exp}}</td>
+            </tr>
+            
+        </tbody>
+    </table>
+    <br><br><br><br>
+</div>

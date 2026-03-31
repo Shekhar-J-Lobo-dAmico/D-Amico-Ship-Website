@@ -1,0 +1,452 @@
+  <html> 
+	<title>
+        d'Amico Ship Ishima India Private Limited
+	</title>
+	<head>
+		<link
+			href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+			rel="stylesheet">
+
+		<!-- Custom styles for this template-->
+		<!-- <link href="css/sb-admin-2.min.css" rel="stylesheet"> -->
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+	</head>
+	<style>
+		body{
+            margin:0;
+            overflow:hidden;
+        }
+
+        #globe-container{
+            width:100vw;
+            height:100vh;
+        }
+
+        .popup{
+            position:fixed;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            padding:20px;
+            border-radius:8px;
+            display:none;
+            box-shadow:0 0 20px rgba(0,0,0,0.3);
+        }
+
+        .dropdown-submenu {
+           position: relative;
+        }
+
+        .dropdown-submenu > .dropdown-menu {
+            top: 0;
+            left: 100%;
+            margin-top: -5px;
+            display: none;
+        }
+
+        .dropdown-submenu:hover > .dropdown-menu {
+            display: block;
+            }
+	</style>
+   <body>
+
+		<!-- body -->
+		<div>
+			<!-- Topbar -->
+            <nav class="navbar navbar-expand-lg bg-light" data-bs-theme="light" style="position: sticky;">
+				<div class="container-fluid">
+					<a class="navbar-brand" href="#"><img src="../img/damico_logo-removebg-preview_flag.png" style="width: auto;" height="30px"> </a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarColor03">
+						<ul class="navbar-nav me-auto">
+							<li class="nav-item">
+								<a class="nav-link" href="/home">Home</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/home/aboutus">ABOUT US</a>
+							</li>
+							<li class="nav-item">
+							<a class="nav-link" href="/home/events">EVENTS</a>
+							</li>
+							<li class="nav-item">
+							<a class="nav-link" href="/home/ourteam">OUR TEAM</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link active" href="#">OUR FLEET</a>
+								<span class="visually-hidden">(current)</span>
+							</li>
+							<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">CAREER</a>
+							<ul class="dropdown-menu">
+								<li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle" href="#"> Ship Personnel </a>
+                                    <ul class="dropdown-menu">
+                                        <li class="dropdown-submenu">
+                                            <a class="dropdown-item dropdown-toggle" href="#"> Rome Fleet </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="/home/shippersonnel?req=romeImReq"> Immediate Requirement </a></li>
+                                                <div class="dropdown-divider"></div>
+                                                <li><a class="dropdown-item" href="/home/shippersonnel?req=romeGReq"> General Requirement </a></li>
+                                            </ul>
+                                        </li>
+                                        <div class="dropdown-divider"></div>
+                                        <li class="dropdown-submenu">
+                                            <a class="dropdown-item  dropdown-toggle" href="#"> Singapore Fleet </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="/home/shippersonnel?req=singImReq"> Immediate Requirement </a></li>
+                                                <div class="dropdown-divider"></div>
+                                                <li><a class="dropdown-item" href="/home/shippersonnel?req=singGReq"> General Requirement </a></li>
+                                            </ul>
+                                        </li>
+
+                                    </ul>
+                                </li>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="/home/shorepersonnel">Shore Personnel</a>
+							</ul>
+							</li>
+						</ul>
+						<li class="nav-item d-flex">
+							<a class="nav-link" data-section="contact-us" href="/home/contactus">Contact Us</a>
+						</li>
+					</div>
+				</div>
+			</nav>
+			<div id="globe-container">
+                <div style="background-color: black; height: fit-content; margin-bottom: -10px; padding: 10px;"> 
+                    <h5 style="color: white; -webkit-text-stroke: 0.5px rgba(174, 247, 5, 0.7); text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);">Scroll the globe to rotate<br>
+                    Click on the flag to view the fleet</h5>
+                </div>
+            </div>
+
+			<div id="popup" class="card text-white bg-info popup" style="max-width: fit-content;">
+				<div id="cityName" class="card-header" style="width: 100%; text-align: center; font-size: 4vh;">Header</div>
+				<div class="card-body">
+                    <b><div id="shipContainer"></div></b>
+					<!-- <ul id="cuisineList" class="mb-3" ></ul> -->
+                	<button type="button" class="btn btn-secondary" onclick="closePopup()">Close</button>
+				</div>
+			</div>
+
+            
+            <!-- <div id="popup" class="popup">
+                <h3 id="cityName"></h3>
+                <ul id="cuisineList"></ul>
+                <button onclick="closePopup()">Close</button>
+            </div> -->
+		</div>
+
+		<script type="importmap">
+            {
+				"imports": {
+					"three": "../js/three.module.js"
+				}
+            }
+        </script>
+        <script type="module">
+
+            import * as THREE from 'three';
+            import { OrbitControls } from '../js/OrbitControls.js';
+			// import { GLTFLoader } from '/node_modules/three/examples/jsm/loaders/GLTFLoader.js';
+
+            let scene = new THREE.Scene();
+            let camera = new THREE.PerspectiveCamera(60,window.innerWidth/window.innerHeight,0.1,1000);
+
+            let renderer = new THREE.WebGLRenderer({antialias:true});
+            renderer.setSize(window.innerWidth,window.innerHeight);
+            renderer.outputColorSpace = THREE.SRGBColorSpace;
+			document.body.appendChild( renderer.domElement );
+
+			// check when the browser size has changed and adjust the camera accordingly
+			window.addEventListener( 'resize', function( )
+			{
+		      	var WIDTH = window.innerWidth;
+				var HEIGHT = window.innerHeight;
+		      	renderer.setSize( WIDTH, HEIGHT );
+		      	camera.aspect = WIDTH / HEIGHT;
+		      	camera.updateProjectionMatrix( );
+	    	} );
+
+            document.getElementById("globe-container").appendChild(renderer.domElement);
+
+            camera.position.z = 3;
+
+            const controls = new OrbitControls(camera,renderer.domElement);
+
+            const raycaster = new THREE.Raycaster();
+            const mouse = new THREE.Vector2();
+
+
+            // --------------------
+            // Globe
+            // --------------------
+
+            const textureLoader = new THREE.TextureLoader();
+
+            const globeTexture = textureLoader.load(
+            "../img/land_ocean_ice_cloud_2048.jpg"
+            );
+
+            const globeGeometry = new THREE.SphereGeometry(1,64,64);
+
+            const globeMaterial = new THREE.MeshStandardMaterial({
+                map:globeTexture
+            });
+
+            const globe = new THREE.Mesh(globeGeometry,globeMaterial);
+			globe.rotation.y += 3  ;
+            scene.add(globe);
+
+
+            // --------------------
+            // Lights
+            // --------------------
+
+            scene.add(new THREE.AmbientLight(0xffffff,1));
+
+            const light = new THREE.DirectionalLight(0xffffff,1);
+            light.position.set(5,3,5);
+            scene.add(light);
+
+            
+            // --------------------
+            // Convert lat/lon to 3D position
+            // --------------------
+
+            function latLongToVector3(lat, lon, radius){
+
+                const phi = (90 - lat) * (Math.PI / 180);
+                const theta = (lon + 180 -190) * (Math.PI / 180); //- 187
+
+                const x = -(radius * Math.sin(phi) * Math.cos(theta));
+                const z = (radius * Math.sin(phi) * Math.sin(theta));
+                const y = (radius * Math.cos(phi)) + 0.03;
+                return new THREE.Vector3(x,y,z);
+            }
+
+
+            // --------------------
+            // City Data
+            // --------------------
+
+            const cities = [
+
+            {
+                name:"Rome",
+                bg:"../img/wp14799350-rome-wallpapers.webp",
+                lat:41.9028,
+                lon:12.4964,
+                icon:"https://upload.wikimedia.org/wikipedia/commons/a/a6/Flag_of_Rome.svg",
+                fleet:["High Seas","High Trader","High Trust","High Voyager","High Wind","High Loyalty","High Freedom","High Challenge","High Discovery","High Adventurer","High Navigator","High Fidelity","High Tide","High Leader",
+					"Cielo Bianco","Cielo Di Capri","Cielo Di Gaeta","Cielo Di Hanoi","Cielo Di New York","Cielo Di Ulsan","Cielo Di Salerno","Cielo Di Rotterdam","Cielo D Europa","Cielo d'Italia","Cielo Di Cagliari",
+					"Medi Roma","Medi Serapo","Medi Ginevra","Medi Domus Daini","Medi Amalfi","Medi Giannutri","Medi Argentario","Medi Eolie","Medi Vaiano","Medi Venezia","Medi Luna"
+				]
+            },
+
+            {
+                name:"Singapore",
+                bg:"../img/wp14160024-singapore-marina-bay-sands-wallpapers.jpg",
+                lat:1.3521,
+                lon:103.8198,
+                icon:"https://upload.wikimedia.org/wikipedia/commons/4/48/Flag_of_Singapore.svg",
+                fleet:["Cielo Di Houston","Cielo Rosso","Cielo Di Rabat","High Transporter","High Explorer","High Mariner","Medi Cajeta","Medi Caboto","Medi Zuoz","Medi Adriatico","Medi Capalbio","Medi Egadi",
+					"Medi Positano","Medi Egeo","Medi Tirreno","Medi Atlantico","Medi Palmarola","Tristar Jisha","Clearocean Music","Rui Fu Sheng","Philotimos","Bagheera","Bright Future","Clearocean Mathilde",
+					"Philoxenia","Rui Fu Xing","Vialli","Bantry Bay","Mossel Bay","Kalk Bay","Table Bay","Victoria Bay","Herolds Bay","Clearocean Marigold"
+				]
+            }
+
+            ];
+            
+            // --------------------
+            // Create Markers
+            // --------------------
+
+            const markers = [];
+
+            cities.forEach(city=>{
+                // const markerGeo = new THREE.BoxGeometry( 0.05, 0.05, 0.05 );//new THREE.SphereGeometry(0.05,16,16);
+                // const markerMat = new THREE.MeshBasicMaterial({color:0xff0000});
+
+                // const marker = new THREE.Mesh(markerGeo,markerMat);
+                const iconTexture = new THREE.TextureLoader().load("../img/damico_logo-removebg-preview_flag.png");
+                const spriteMaterial = new THREE.SpriteMaterial({
+                    map: iconTexture,
+                    transparent: true
+                });
+
+                const marker = new THREE.Sprite(spriteMaterial);
+
+                // instantiate a loader
+                // const loader2 = new GLTFLoader();
+                // loader2.load(
+                //     '../img/Evergreen/test.glb',
+                //     function (gltf) {
+                //         const model = gltf.scene;
+
+                //         // Rotate front → top
+                //         // model.rotation.x = -Math.PI / 2;
+                //         // Compute bounding box
+                //         const box = new THREE.Box3().setFromObject(model);
+
+                //         const size = new THREE.Vector3();
+                //         box.getSize(size);
+
+                        
+                //         // size of icon
+                //         model.scale.set(0.12, 0.12, 0.12);
+
+                //         const pos = latLongToVector3(city.lat,city.lon,1.02);
+
+                //         model.position.copy(pos);
+
+                //         model.userData = city;
+
+                //         scene.add(model);
+
+                //         markers.push(model);
+
+                //     }
+                // );
+			
+                // size of icon
+                marker.scale.set(0.18, 0.18, 1);
+                
+                const pos = latLongToVector3(city.lat,city.lon,1.02);
+
+                marker.position.copy(pos);
+
+                marker.userData = city;
+
+                scene.add(marker);
+
+                markers.push(marker);
+
+            });
+
+            // --------------------
+            // Click detection
+            // --------------------
+
+            renderer.domElement.addEventListener("pointerdown", (event) => {
+
+                const rect = renderer.domElement.getBoundingClientRect();
+
+                mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+                mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+
+                raycaster.setFromCamera(mouse, camera);
+
+                const intersects = raycaster.intersectObjects(markers, false);
+
+                if (intersects.length > 0) {
+
+                    const marker = intersects[0].object;
+                    const city = marker.userData;
+
+                    openPopup(city);
+                }
+
+            });
+
+
+            // --------------------
+            // Popup logic
+            // --------------------
+
+            function openPopup(city){
+
+                const popup = document.getElementById("popup");
+
+                document.getElementById("cityName").innerText = city.name;
+
+                popup.style.backgroundImage = `url(${city.bg})`;
+                popup.style.backgroundSize = "cover";
+                popup.style.backgroundPosition = "center";
+                popup.style.backgroundRepeat = "no-repeat";
+
+                renderShipList(city.fleet);
+
+                // const list = document.getElementById("cuisineList");
+                // list.innerHTML="";
+
+                // city.fleet.forEach(c=>{
+
+                //     const li = document.createElement("li");
+                //     li.innerText = c;
+                //     list.appendChild(li);
+
+                // });
+
+                popup.style.display="block";
+
+            }
+
+            function renderShipList(list) {
+
+                const container = document.getElementById("shipContainer");
+                container.innerHTML = "";
+
+                const chunkSize = 10;
+
+                if(list.length > 25){
+
+                    container.style.display = "flex";
+                    container.style.gap = "40px";
+
+                    for(let i = 0; i < list.length; i += chunkSize){
+
+                        const ul = document.createElement("ul");
+
+                        const chunk = list.slice(i, i + chunkSize);
+
+                        chunk.forEach(item => {
+                            const li = document.createElement("li");
+                            li.textContent = item;
+                            ul.appendChild(li);
+                        });
+
+                        container.appendChild(ul);
+                    }
+
+                } else {
+
+                    const ul = document.createElement("ul");
+
+                    list.forEach(item=>{
+                        const li = document.createElement("li");
+                        li.textContent = item;
+                        ul.appendChild(li);
+                    });
+
+                    container.appendChild(ul);
+                }
+            }
+
+            window.closePopup=function(){
+                document.getElementById("popup").style.display="none";
+            }
+
+
+            // --------------------
+            // Animation
+            // --------------------
+
+            function animate(){
+
+                requestAnimationFrame(animate);
+
+                // globe.rotation.y += 0.008;
+
+                renderer.render(scene,camera);
+
+            }
+
+            animate();
+
+        </script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+	</body>
+</html>

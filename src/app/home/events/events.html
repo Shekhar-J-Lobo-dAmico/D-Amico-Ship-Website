@@ -1,0 +1,14 @@
+<div id="overlay">
+    <app-top-banner [title]='title'></app-top-banner>
+
+    <div class="row" style="margin: 20px;">
+        <a  *ngFor="let event of events" target="_blank" [href]="event.link" class="column-event col-xl-4 col-md-4 mb-4">
+            <img [src]="event.link" alt="Norway" style="width:100%;">
+            <div class="text-block">
+                <h1>{{event.year}}</h1>
+                <p>{{event.discription}}</p>
+            </div>
+        </a>
+           
+    </div>       
+</div>
