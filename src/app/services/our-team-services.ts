@@ -7,9 +7,9 @@ export class OurTeamServices {
   public teams:any[]=[
     {
       'link':'assets/img/employees/cptBudwal.jpg',
-      'name':'Captail Budwal',
+      'name':'Capt Kulwant Singh Budwal',
       'designation':'Captain',
-      'comment':'We love that guy'
+      'comment':'Director'
     },
     {
       'link':'assets/img/employees/pagli.jpg',
@@ -25,39 +25,111 @@ export class OurTeamServices {
     },
     {
       'link':'assets/img/employees/srini.jpg',
-      'name':'Srini',
+      'name':'V Srinivasan',
       'designation':'IT',
-      'comment':''
+      'comment':'IT Manager'
     },
     {
       'link':'assets/img/India-States-Map.png',
-      'name':'John Doe',
-      'designation':'Architect & Engineer',
-      'comment':'We love that guy'
+      'name':'Hema Patial',
+      'designation':'Delhi',
+      'comment':'Sr.Fleet Personnel Manager'
     },
     {
       'link':'assets/img/India-States-Map.png',
-      'name':'John Doe',
-      'designation':'Architect & Engineer',
-      'comment':'We love that guy'
+      'name':'Vikas Shinde',
+      'designation':'Fleet',
+      'comment':'Fleet Personnel Manager'
     },
     {
       'link':'assets/img/India-States-Map.png',
-      'name':'John Doe',
-      'designation':'Architect & Engineer',
-      'comment':'We love that guy'
+      'name':'Supriya Panchal',
+      'designation':'HR',
+      'comment':'HR MANAGER'
     },
     {
       'link':'assets/img/India-States-Map.png',
-      'name':'John Doe',
-      'designation':'Architect & Engineer',
-      'comment':'We love that guy'
+      'name':'Capt Ankur Mittal',
+      'designation':'Marine',
+      'comment':'Marine Manager'
     },
     {
       'link':'assets/img/India-States-Map.png',
-      'name':'John Doe',
-      'designation':'Architect & Engineer',
-      'comment':'We love that guy'
+      'name':'Capt. Ashwin DMello',
+      'designation':'Marine',
+      'comment':'Marine Manager'
+    },
+    {
+      'link':'assets/img/India-States-Map.png',
+      'name':'Vikas Shetty',
+      'designation':'Payroll',
+      'comment':'Payroll Manager'
+    },
+    {
+      'link':'assets/img/India-States-Map.png',
+      'name':'Ajay Singh',
+      'designation':'PMS',
+      'comment':'FLEX Manager'
+    },
+    {
+      'link':'assets/img/India-States-Map.png',
+      'name':'Ajay Mohite',
+      'designation':'PMS',
+      'comment':'FLEX Expert (Deputy Manager)'
+    },
+    {
+      'link':'assets/img/India-States-Map.png',
+      'name':'Deependu Ray',
+      'designation':'Recruitment',
+      'comment':'Senior Fleet Personnel Manager'
+    },
+    {
+      'link':'assets/img/India-States-Map.png',
+      'name':'Olwin Dias',
+      'designation':'Recruitment',
+      'comment':'Fleet Personnel Manager'
+    },
+    {
+      'link':'assets/img/India-States-Map.png',
+      'name':'Upendranath Pandey',
+      'designation':'Recruitment',
+      'comment':'Fleet Personnel Manager'
+    },
+    {
+      'link':'assets/img/India-States-Map.png',
+      'name':'Bhaskar Sogam',
+      'designation':'Recruitment',
+      'comment':'Fleet Personnel Manager'
+    },
+    {
+      'link':'assets/img/India-States-Map.png',
+      'name':'Anjali Kulkarni',
+      'designation':'Fleet',
+      'comment':'Fleet Personnel Manager'
+    },
+    {
+      'link':'assets/img/India-States-Map.png',
+      'name':'Capt. Manoj Kumar',
+      'designation':'Fleet',
+      'comment':'Fleet Crew Manager'
+    },
+    {
+      'link':'assets/img/India-States-Map.png',
+      'name':'Reshma Shetty',
+      'designation':'Fleet',
+      'comment':'Fleet Personnel Manager'
+    },
+    {
+      'link':'assets/img/India-States-Map.png',
+      'name':'Sandeep Rathod',
+      'designation':'Technical',
+      'comment':'Technical Manager'
+    },
+    {
+      'link':'assets/img/India-States-Map.png',
+      'name':'Capt. Pankaj Nayak',
+      'designation':'Training',
+      'comment':'Training Manager'
     },
   ];
 }

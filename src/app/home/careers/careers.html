@@ -15,32 +15,38 @@
         <p style="color: black; font-size: 2dvh;">d’Amico is an Equal Opportunity Employer and all relevantly qualified applicants are considered without any discrimination. If you have the drive for achievement, we’d love to hear from you.</p>
 
     </div>
-    <form style="margin: 30px; margin-bottom: 120px;">
-        <fieldset style="font-size: 2dvh;">
+        <fieldset style="font-size: 2dvh; margin: 30px; margin-bottom: 150px;">
             <legend>Apply Online</legend>
             <div [ngClass]="isNameValid?'has-success':'has-danger'">
-                <label for="exampleInputEmail1" class="form-label mt-4">Name</label>
-                <input type="text" [ngClass]="isNameValid? 'is-valid' : 'form-control'" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Full Name" />
-                <div *ngIf="isNameValid" [ngClass]="isNameValid?'valid-feedback':'invalid-feedback'" class="valid-feedback">Success! You've done it.</div>
+                <label for="exampleInputEmail1" class="form-label mt-4">Name *</label>
+                <input type="text" [ngClass]="isNameValid? 'is-valid' : isSubmitClicked? 'is-invalid':''" class="form-control" aria-describedby="emailHelp" placeholder="Full Name" [(ngModel)]="enteredName" />
+                <div *ngIf="isNameValid && isSubmitClicked" class="valid-feedback">Success! You've done it.</div>
+                <div *ngIf="!isNameValid && isSubmitClicked" class="valid-invalid">Apologies, Name cannot be blank</div>
             </div>
             <div>
                 <label for="exampleInputEmail1" class="form-label mt-4">Address</label>
                 <textarea type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Address" rows="3"></textarea>
             </div>
-            <div>
-                <label for="exampleInputEmail1" class="form-label mt-4">Mobile</label>
-                <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Mobile" />
+            <div [ngClass]="isMobiValid?'has-success':'has-danger'">
+                <label for="exampleInputEmail1" class="form-label mt-4">Mobile *</label>
+                <input type="number" [ngClass]="isMobiValid? 'is-valid' : isSubmitClicked? 'is-invalid':''" class="form-control" (input)="onInput($event, exampleInputEmail1)" placeholder="Mobile" [(ngModel)]="enteredMobi" />
+                <small id="mobiHelp" class="form-text text-muted">We'll never share your mobile number with anyone else.</small>
+                <div *ngIf="isMobiValid && isSubmitClicked" class="valid-feedback">Success! You've done it.</div>
+                <div *ngIf="!isMobiValid && isSubmitClicked" class="valid-invalid">Apologies, Invalid Mobile Number. Try Again</div>
             </div>
-            <div>
-                <label for="exampleInputEmail1" class="form-label mt-4">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+            <div [ngClass]="isMailValid?'has-success':'has-danger'">
+                <label for="exampleInputEmail1" class="form-label mt-4">Email Address *</label>
+                <input type="email" [formControl]="email" [ngClass]="isMailValid ? 'is-valid' : isSubmitClicked? 'is-invalid':''" class="form-control" #exampleInputEmail1 aria-describedby="emailHelp" placeholder="Enter email"  [(ngModel)]="enteredMail"/>
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <div *ngIf="isMailValid && isSubmitClicked" class="valid-feedback">Success! You've done it.</div>
+                <div *ngIf="!isMailValid && isSubmitClicked" class="valid-invalid">Apologies, Invalid Email Id. Try Again</div>
             </div>
-            <div style="margin-bottom: 20px;">
-                <label for="formFile" class="form-label mt-4">Upload Resume</label>
-                <input class="form-control" type="file" id="formFile" accept=".pdf">
+            <div [ngClass]="isFileValid?'has-success':'has-danger'" style="margin-bottom: 20px;">
+                <label for="formFile" class="form-label mt-4">Upload Resume *</label>
+                <input class="form-control" [ngClass]="isFileValid? 'is-valid' : isSubmitClicked? 'is-invalid':''" type="file" id="formFile" accept=".pdf" (change)="onFileSelected($event)" >
+                <div *ngIf="isFileValid && isSubmitClicked" class="valid-feedback">Success! You've done it.</div>
+                <div *ngIf="!isFileValid && isSubmitClicked" class="valid-invalid">Apologies, File not found. Try Again</div>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" (click)="submit()">Submit</button>
         </fieldset>
-    </form>
 </div>

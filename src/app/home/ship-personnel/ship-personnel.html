@@ -22,7 +22,7 @@
                 </div>
                 <div [ngClass]="isNameValid?'has-success':'has-danger'">
                     <label for="exampleInputEmail1" class="form-label mt-4">Name</label>
-                    <input type="text" [ngClass]="isNameValid? 'is-valid' : 'form-control'" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Full Name" />
+                    <input type="text" [ngClass]="isNameValid? 'is-valid' : 'form-control'" class="form-control" placeholder="Full Name" />
                     <div *ngIf="isNameValid" [ngClass]="isNameValid?'valid-feedback':'invalid-feedback'" class="valid-feedback">Success! You've done it.</div>
                 </div>
                 <div>
@@ -40,11 +40,11 @@
                 </div>
                 <div>
                     <label for="exampleInputEmail1" class="form-label mt-4">Availability</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Availability"/>
+                    <input type="text" class="form-control" placeholder="Availability"/>
                 </div>
                 <div>
                     <label for="exampleInputEmail1" class="form-label mt-4">Nationality</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nationality"/>
+                    <input type="text" class="form-control" placeholder="Nationality"/>
                 </div>
                 <div style="margin-bottom: 20px;">
                     <label for="formFile" class="form-label mt-4">Upload Form</label>

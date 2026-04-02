@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { StartPgServices } from '../../services/start-pg-services';
 
 @Component({
   selector: 'app-top-menu-bar',
@@ -11,9 +12,13 @@ export class TopMenuBar {
 
   activePage : string = "";
   
-  constructor(private router:Router){}
+  // Can be a local path or external URL
+  currentBg = '';//'assets/img/gp.jpg'; 
+
+  constructor(private router:Router, private startService:StartPgServices){}
 
   ngOnInit(){
+    this.currentBg = this.getBg();
     if(this.router.url.toString().includes('/aboutus')){
       this.activePage="aboutus";
     }else if(this.router.url.toString().includes('/events')){
@@ -40,5 +45,30 @@ export class TopMenuBar {
       this.router.navigate(['/home/'+page]);
     }
     this.activePage=page;
+  }
+
+  getBg():string{
+    try{
+      const today = new Date();
+      today.setHours(0, 0, 0, 0); // Reset time to midnight for accurate comparison
+
+      const image= this.startService.bgList.filter((item:any) => {
+        const start = this.parseDate(item.startdate);
+        const end = this.parseDate(item.lastdate);
+        
+        return today >= start && today <= end;
+      });
+      
+      // const image=this.startService.bgList.filter((item:any) => item.date === todayFormatted);
+      return image[0].bgImage;
+    }catch(err){
+      console.log(err);
+      return "";
+    }
+  }
+
+  parseDate(dateStr: string): Date {
+    const [day, month, year] = dateStr.split('/').map(Number);
+    return new Date(year, month - 1, day);
   }
 }
