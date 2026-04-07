@@ -54,12 +54,16 @@ export class Start implements AfterViewInit{
     this.zone.runOutsideAngular(()=>{
         this.initThree();
         this.animate();
+        window.addEventListener('mousemove', this.onMouseMove);
+        window.addEventListener('touchmove', this.onTouchMove, { passive: true } );
     });
   }
 
   ngOnDestroy(): void {
     cancelAnimationFrame(this.animationId);
     window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('mousemove', this.onMouseMove);
+    window.removeEventListener('touchmove', this.onTouchMove);
   }
 
   /* ---------------------------------- */
@@ -193,6 +197,17 @@ export class Start implements AfterViewInit{
     this.camera.updateProjectionMatrix();
 
     this.renderer.setSize(width,height);
+  };
+
+  private onMouseMove = (event: MouseEvent) => {
+    this.mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    this.mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+  };
+
+  private onTouchMove = (event: TouchEvent) => {
+    const touch = event.touches[0];
+    this.mouse.x = (touch.clientX / window.innerWidth) * 2 - 1;
+    this.mouse.y = -(touch.clientY / window.innerHeight) * 2 + 1;
   };
 
   /* ---------------------------------- */

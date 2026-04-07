@@ -9,6 +9,7 @@ import { ContactUs } from './home/contact-us/contact-us';
 import { Careers } from './home/careers/careers';
 import { ShorePersonnel } from './home/shore-personnel/shore-personnel';
 import { ShipPersonnel } from './home/ship-personnel/ship-personnel';
+import { Creators } from './home/creators/creators';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'start', pathMatch: 'full' },
@@ -24,6 +25,7 @@ export const routes: Routes = [
         { path: 'shorepersonnel', component: ShorePersonnel },
         { path: 'shippersonnel', component: ShipPersonnel },
         { path: 'careers', component: Careers },
+        { path: 'dev', component: Creators },
         // more child routes...
         ]
     }

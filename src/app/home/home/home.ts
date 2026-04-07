@@ -161,6 +161,9 @@ export class Home implements AfterViewInit, OnDestroy{
       ?.addEventListener('mousemove',this.onMouseMove);
 
     window.addEventListener('wheel',this.onScroll);
+    window.addEventListener('touchstart', this.onTouchStart, { passive: true });
+    window.addEventListener('touchmove', this.onTouchMove, { passive: true });
+    window.addEventListener('touchend', this.onTouchEnd, { passive: true });
   }
 
   /* ===================================================== */
@@ -187,6 +190,41 @@ export class Home implements AfterViewInit, OnDestroy{
 
   private scrollAccumulator = 0;
   private threshold = 540;
+
+  private touchStartY = 0;
+  private touchEndY = 0;
+  private readonly swipeThreshold = 50; // px
+
+  private onTouchStart = (event: TouchEvent) => {
+    this.touchStartY = event.touches[0].clientY;
+  };
+
+  private onTouchMove = (event: TouchEvent) => {
+    this.touchEndY = event.touches[0].clientY;
+  };
+
+  private onTouchEnd = () => {
+
+    const delta = this.touchStartY - this.touchEndY;
+
+    if (Math.abs(delta) < this.swipeThreshold) return;
+
+    document
+      .getElementById(this.sections[this.currentSection])
+      ?.classList.remove('active');
+
+    if (delta > 0)
+      this.currentSection =
+        Math.min(this.currentSection + 1, this.sections.length - 1);
+    else
+      this.currentSection =
+        Math.max(this.currentSection - 1, 0);
+
+    document
+      .getElementById(this.sections[this.currentSection])
+      ?.classList.add('active');
+  };
+
 
   private onScroll = (event:WheelEvent)=>{
 
@@ -251,6 +289,10 @@ export class Home implements AfterViewInit, OnDestroy{
 
     window.removeEventListener('resize',this.onResize);
     window.removeEventListener('wheel',this.onScroll);
+    window.removeEventListener('touchstart', this.onTouchStart);
+    window.removeEventListener('touchmove', this.onTouchMove);
+    window.removeEventListener('touchend', this.onTouchEnd);
   }
+
 
 }

@@ -32,8 +32,8 @@ export class OurTeamServices {
     {
       'link':'assets/img/India-States-Map.png',
       'name':'Hema Patial',
-      'designation':'Delhi',
-      'comment':'Sr.Fleet Personnel Manager'
+      'designation':'Fleet',
+      'comment':'Sr.Fleet Personnel Manager (Delhi)'
     },
     {
       'link':'assets/img/India-States-Map.png',

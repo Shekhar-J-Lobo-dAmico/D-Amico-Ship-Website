@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { TopBanner } from '../../component/top-banner/top-banner';
 import { OurTeamServices } from '../../services/our-team-services';
 
@@ -11,7 +11,7 @@ import { OurTeamServices } from '../../services/our-team-services';
 })
 export class OurTeam {
 
-  @Input() title:string="MEET OUR TEAM";
+  title:string="MEET OUR TEAM";
   teams:any[]=[];
   constructor(private teamService:OurTeamServices){}
 
