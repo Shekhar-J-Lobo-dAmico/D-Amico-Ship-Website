@@ -64,6 +64,85 @@ export class JobServices {
         '• Conduct energy management assessments aligned with ISO 50001:2018 and support energy-related TMSA audit requirements.\n'+
         '• Assist technical and HSQE teams during external audits (TMSA, Right Ship, Energy Management, etc.)\n'+
         '• Track and report internal KPIs to support strategic decision-making by top management.'
+    },{
+      'pos':'Ship Data Analyst',
+      'location':'Mumbai',
+      'department':'Fleet Performance Monitoring Department',
+      'atr':'The Ship Data Analyst will play a key role in monitoring and validating vessel technical data, ensuring compliance with international regulations, and supporting the company’s sustainability and energy efficiency goals. This position involves managing vessel reports, analysing technical and operational data, and preparing regulatory submissions for emissions compliance.',
+      'req':'• Basic knowledge of shipping operations, technical parameters and ship data collection (Noon Reports).\n'+
+          '• Strong computer literacy with advanced proficiency in Excel, PowerPoint, Power BI and Share Point.\n'+
+          '• Excellent attention to detail and accuracy in data handling.\n'+
+          '• Strong organizational skills and ability to work independently as well as in a team environment.\n'+
+          '• Comfortable handling confidential data with integrity.\n'+
+          '• Good interpersonal and communication skills.',
+      'jd':'1. Data Validation & Reporting\n'+
+          '• Review and validate Daily Noon and other Event Reports submitted by vessels in the company database through company proprietary tool.\n'+
+          '• Communicate with vessels to correct discrepancies and follow up on missing reports or documents.\n'+
+          '2. Document Management\n'+
+          '• Verify and upload Deck & Engine Logbooks, Bunker Delivery Notes, Bills of Lading, Bunker Survey and other relevant reports to the SharePoint library.\n'+
+          '• Maintain records for Statement of Compliance (IMO DCS) and Document of Compliance (EU MRV).\n'+
+          '3. Regulatory Compliance\n'+
+          '• Prepare and submit emission reports for EU MRV-ETS, FuelEU and IMO DCS requirements.\n'+
+          '• Monitor monthly Carbon Intensity Indicator (CII) ratings using company software.\n'+
+          '4. Data Analysis & Insights\n'+
+          '• Generate periodical and annual operation data reports for internal stakeholders and external audits.\n'+
+          '• Support technical teams with data-driven insights for operational improvements.\n'+
+          '5. Training & Support\n'+
+          '• Conduct training sessions for Masters, Chief Engineers, and Officers on data reporting and compliance processes.\n'+
+          '6. Tools & Technology\n'+
+          '• Utilize weather analysis tools for weather validation.\n'+
+          '• Ensure accurate and timely data entry and reporting across systems.'
+    },{
+      'pos':'Voyage Data Analyst',
+      'location':'Mumbai',
+      'exp':'1–3 years of experience in same/ similar role within the maritime industry',
+      'atr':'We are seeking a detail-oriented and analytical Voyage Data Analyst with experience in the maritime industry to support our fleet performance monitoring team. The ideal candidate will be responsible for collecting, analysing, and interpreting voyage-related data to ensure regulatory compliance, generate actionable insights, and support strategic decision-making across the fleet.',
+      'req':'• 1–3 years of experience in same/ similar role within the maritime industry\n'+
+            '• Strong analytical and problem-solving skills with attention to detail\n'+
+            '• Proficiency in Microsoft Office Suite (Excel, Word, Outlook); experience with data visualization tools is a plus\n'+
+            '• Excellent communication skills in English, both written and verbal\n'+
+            '• Ability to work effectively in a multinational, interdisciplinary, and remote team setup\n'+
+            '• Familiarity with maritime regulations, and vessel operations is an added advantage',
+      'jd':'• Collect, clean, and validate voyage data from vessels, onboard systems, and shore-based sources.\n'+
+          '• Monitor vessel performance metrics such as fuel consumption, speed, weather data, ship routing etc\n'+
+          '• Generate regular reports and dashboards highlighting key insights and trends\n'+
+          '• Collaborate with technical team to identify performance / data quality improvement opportunities\n'+
+          '• Ensure data accuracy and consistency across systems and reports\n'+
+          '• Support compliance with environmental and regulatory standards (e.g., IMO DCS, EU MRV, EU ETS, Fuel EU Maritime, ESG etc)\n'+
+          '• Assist in the implementation of data quality standards and best practices across the fleet'
+    },{
+      'pos':'Documentation Assistant',
+      'location':'Mumbai',
+      'department':'Documentation ',
+      'exp':'Graduate or experience 1-2yrs in similar profile',
+      'atr':'We are currently looking for Documentation Assistant (Crewing), Mumbai Office.',
+      'req':'Graduate or experience 1-2yrs in similar profile.\n'+
+            '– proficiency in computers specially Word/ Excel / Power Point with proficient typing speed\n'+
+            '– Excellent Communication Skills.\n'+
+            '– Must be able to work in a team based environment.\n'+
+            '– Candidate with relevant experience can also apply',
+      'jd':'• Document Preparation: Create and process essential documents align with company procedure\n'+
+          '• Compliance & Accuracy: Verify all documentation for compliance with international and regional regulations.\n'+
+          '• Stakeholder Coordination: Liaise with agencies/master/flag state application for any docs required\n'+
+          '• Record Management: Maintain meticulous, organized, and secure upload in our system\n'+
+          '• Communication: Provide updates on crew documents status, respond to inquiries, and resolve documentation issues promptly.'
+    },{
+      'pos':'ICT SUPPORT',
+      'location':'Mumbai',
+      'department':'IT',
+      'exp':'Freshers to 6 years’ experience candidate',
+      'atr':'IT support/IT engineers /IT administrators /IT helpdesk , Maritime background will be an advantage',
+      'req':'Candidate will be part of Daily ICT support Team to provide technical support for users of IT infrastructure and communications on the vessels worldwide.\n'+
+          'Candidate will response queries from users via telephone, email, chat room or instant message, by remote and identify technical problems and possible solutions, then compile reports about this, as well as enter information into databases and liaise with colleagues in the rectification of common problems.\n'+
+          'Candidates maintain close communication with users and update them on the progress of the Vessel IT tasks.\n'+
+          'Candidate will be involved in installation/upgrade of hardware installations on board the d’Amico Vessels which will offer you multi-cultural and demanding global environment.\n'+
+          'Candidate must expect to have both day and night duties due to rolling duty roster\n'+
+          'Marine background would be an advantage',
+      'jd':'The incumbent will be responsible for end-user support troubleshooting and support of any hardware and software issues via email/calls as well as being involved in the implementation or upgrade projects.\n'+
+          '• Responsible for providing IT helpdesk support to end users on IT hardware and software problems, and support on IT Infrastructure and resolve them in a timely manner.\n'+
+          '• Provide IT/End-user support (setup and deploy computers, IT equipment, software patches, troubleshooting, etc.)\n'+
+          '• IT assets management (computers, IT devices, IT equipment, software, warranties, etc.)\n'+
+          '• IT administration (reports, projects, documentations, records, helpdesk tool)'
     }
   ];
 

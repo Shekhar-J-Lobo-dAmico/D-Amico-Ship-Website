@@ -4,6 +4,7 @@
     height: 100%;
     pointer-events: auto;
     overflow-y: scroll;
+    padding-bottom: 100px;
 }
 
 .column-team {
