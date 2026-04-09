@@ -1,4 +1,25 @@
- .contactus{
-    background-image: url('/assets/img/cargo-ship-4s.jpg');
+.contactus{
+    background-image: url('/D-Amico-Ship-Website/assets/img/cargo-ship-4s.jpg');
     background-size: cover;
+}
+
+
+@media screen and (min-width: 768px) {
+    .column-event {
+        float: left;
+        width: 50%;
+    }
+    .card-body {
+        font-size: 1dvw;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .column-event {
+        float: left;
+        width: 33.33%;
+    }
+    .card-body {
+        font-size: 1dvw;
+    }
 }

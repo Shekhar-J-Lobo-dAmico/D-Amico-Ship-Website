@@ -13,6 +13,11 @@ export class StartPgServices {
       'startdate':'03/04/2026',
       'lastdate':'03/04/2026',
       'bgImage': 'assets/img/gp.jpg'
+    },
+    {
+      'startdate':'25/12/2026',
+      'lastdate':'06/01/2027',
+      'bgImage': 'assets/img/christmas.jpg'
     }
   ];
 

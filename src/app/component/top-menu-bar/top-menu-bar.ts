@@ -18,7 +18,7 @@ export class TopMenuBar {
   constructor(private router:Router, private startService:StartPgServices){}
 
   ngOnInit(){
-    this.currentBg = this.getBg();
+    // this.currentBg = this.getBg();
     if(this.router.url.toString().includes('/aboutus')){
       this.activePage="aboutus";
     }else if(this.router.url.toString().includes('/events')){
