@@ -11,12 +11,12 @@ export class OurTeamServices {
       'designation':'Captain',
       'comment':'Director'
     },
-    {
-      'link':'assets/img/employees/pagli.jpg',
-      'name':'Pinal Trivedi',
-      'designation':'Documentation',
-      'comment':'Lovely Bride to be'
-    },
+    // {
+    //   'link':'assets/img/employees/pagli.jpg',
+    //   'name':'Pinal Trivedi',
+    //   'designation':'Documentation',
+    //   'comment':'Lovely Bride to be'
+    // },
     {
       'link':'assets/img/employees/depti.jpg',
       'name':'Dipti',
