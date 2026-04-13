@@ -1,0 +1,68 @@
+<div id="overlay">
+    <app-top-banner [title]='title'></app-top-banner>
+    <div style="padding: 20px;">
+        <div class="row">
+            <h2 class="col-xl-9 col-md-9 col-sm-12 mb-9">{{requirement}}</h2>
+            <div class=" col-xl-3 col-md-3 col-sm-3 mb-3">
+                <a href="assets/documents/DSIPL - MANN - 8.5 - 01 - 01 - APPLICATION FORM.xls">
+                    <button type="button" style="width: 100%;" class="btn btn-primary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" 
+                    data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-bs-original-title="Popover Title">Download Application Form</button> 
+                </a>
+                <small id="emailHelp" class="form-text text-muted">Download the Application Form, fill and upload it here.</small>
+            </div>           
+        </div>
+
+        <fieldset>
+            <div [ngClass]="isPosiValid?'has-success':'has-danger'">
+                <label for="exampleSelect1" class="form-label mt-4">Positions *</label>
+                <select class="form-select" id="exampleSelect1" [(ngModel)]="selectedPosi">
+                    <option *ngFor="let job of jobList" >{{job.rank}}</option>
+                </select>
+                <div *ngIf="isPosiValid && isSubmitClicked" class="valid-feedback">Success! You've done it.</div>
+                <div *ngIf="!isPosiValid && isSubmitClicked" class="valid-invalid">Apologies, Position must be selected</div>
+            </div>
+            <div [ngClass]="isNameValid?'has-success':'has-danger'">
+                <label for="exampleInputEmail1" class="form-label mt-4">Name *</label>
+                <input type="text" [ngClass]="isNameValid? 'is-valid' : isSubmitClicked? 'is-invalid':''" class="form-control" placeholder="Full Name" [(ngModel)]="enteredName"/>
+                <div *ngIf="isNameValid && isSubmitClicked" class="valid-feedback">Success! You've done it.</div>
+                <div *ngIf="!isNameValid && isSubmitClicked" class="valid-invalid">Apologies, Name cannot be blank</div>
+            </div>
+            <div>
+                <label for="exampleInputEmail1" class="form-label mt-4">Address</label>
+                <textarea type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Address" rows="3"></textarea>
+            </div>
+            <div [ngClass]="isMobiValid?'has-success':'has-danger'">
+                <label for="exampleInputEmail1" class="form-label mt-4">Mobile *</label>
+                <input type="number" [ngClass]="isMobiValid? 'is-valid' : isSubmitClicked? 'is-invalid':''" class="form-control" (input)="onInput($event, exampleInputEmail1)" placeholder="Mobile" [(ngModel)]="enteredMobi" />
+                <small id="mobiHelp" class="form-text text-muted">We'll never share your mobile number with anyone else.</small>
+                <div *ngIf="isMobiValid && isSubmitClicked" class="valid-feedback">Success! You've done it.</div>
+                <div *ngIf="!isMobiValid && isSubmitClicked" class="valid-invalid">Apologies, Invalid Mobile Number. Try Again</div>
+            </div>
+            <div [ngClass]="isMailValid?'has-success':'has-danger'">
+                <label for="exampleInputEmail1" class="form-label mt-4">Email Address *</label>
+                <input type="email" [ngClass]="isMailValid ? 'is-valid' : isSubmitClicked? 'is-invalid':''" class="form-control" #exampleInputEmail1 aria-describedby="emailHelp" placeholder="Enter email"  [(ngModel)]="enteredMail"/>
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <div *ngIf="isMailValid && isSubmitClicked" class="valid-feedback">Success! You've done it.</div>
+                <div *ngIf="!isMailValid && isSubmitClicked" class="valid-invalid">Apologies, Invalid Email Id. Try Again</div>
+            </div>
+            <div>
+                <label for="exampleInputEmail1" class="form-label mt-4">Availability</label>
+                <input type="text" class="form-control" placeholder="Availability"/>
+            </div>
+            <div>
+                <label for="exampleInputEmail1" class="form-label mt-4">Nationality</label>
+                <input type="text" class="form-control" placeholder="Nationality"/>
+            </div>
+            <div [ngClass]="isFileValid?'has-success':'has-danger'" style="margin-bottom: 20px;">
+                <label for="formFile" class="form-label mt-4">Upload Form *</label>
+                <input class="form-control" [ngClass]="isFileValid? 'is-valid' : isSubmitClicked? 'is-invalid':''" type="file" id="formFile" accept=".xls" (change)="onFileSelected($event)" >
+                <div *ngIf="isFileValid && isSubmitClicked" class="valid-feedback">Success! You've done it.</div>
+                <div *ngIf="!isFileValid && isSubmitClicked" class="valid-invalid">Apologies, File not found. Try Again</div>
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="submit()">Submit</button>
+        </fieldset>
+        
+        <br><br><br><br>
+
+    </div>
+</div>
