@@ -29,7 +29,6 @@ export class JobServices {
       'location':'Mumbai',
       'department':'Marine',
       'exp':'Minimum 1 year',
-      'jd':'Location: Mumbai Department: HSQE Company overview The d’Amico Group, founded in 1952, is a world leader in maritime transportation in the Dry Cargo and Product Tankers sectors and offering international shipping services relating to the core businesses. it owns a modern and Eco fleet of Dry bulk carriers and Products tankers. With head office in […]'
     },{
       'pos':'TRAVEL EXECUTIVE FOR SHIP MANNING COMPANY',
       'location':'Mumbai',

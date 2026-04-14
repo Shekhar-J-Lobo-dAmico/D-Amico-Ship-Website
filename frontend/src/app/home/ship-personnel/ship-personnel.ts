@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { JobServices } from '../../services/job-services';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormsModule, Validators } from '@angular/forms';
+import { GlobalServices } from '../../services/global-services';
 
 @Component({
   selector: 'app-ship-personnel',
@@ -26,6 +27,7 @@ export class ShipPersonnel {
   enteredMobi:string="";
   enteredMail:string="";
   enteredFile:any;
+  enteredDate:any;
   email = new FormControl('', [
     Validators.required,
     Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/)
@@ -37,7 +39,10 @@ export class ShipPersonnel {
     Validators.maxLength(10)
   ]);
   
-  constructor(private jobServices:JobServices, private route:ActivatedRoute){}
+  mailBody:string='';
+  mailSent:any = null;
+
+  constructor(private jobServices:JobServices, private route:ActivatedRoute, private globalService:GlobalServices){}
 
   
   ngOnInit(){
@@ -75,7 +80,7 @@ export class ShipPersonnel {
     this.isMailValid = emailPattern.test(this.enteredMail);
     this.isPosiValid = this.selectedPosi;
     this.isFileValid = this.enteredFile;
-    // console.log(this.enteredFile);
+    console.log(this.enteredDate);
   }
 
   onInput(event: Event, nextElement: HTMLInputElement) {
@@ -85,6 +90,35 @@ export class ShipPersonnel {
     if (input.value.length === 10) {
       nextElement.focus();
     }
+  }
+
+  
+  async createMail(){
+    try{
+      this.mailBody='Dear HR,<br><br>'+
+           ' OFFICE <br><br>Best Regards,<br>Admin'; 
+    
+    const resp:any = await this.sendMail();
+    this.mailSent=resp?resp.status==true:false;
+    console.log(this.mailSent);
+    }catch(err){
+      console.log(err);
+    }
+  }
+
+  sendMail(): Promise<any>{
+    return new Promise((resolve, reject)=>{
+      this.globalService.sendEmail(this.enteredName, "Test Mail - Shore Job Application", "recruit.in@damicoishima.com", "", "", this.mailBody, this.enteredFile).subscribe({ //recruit.in@damicoishima.com   lobo.s@damicoishima.com
+        next: (response) => {
+          console.log("Success", JSON.stringify(response));
+          resolve(response);
+        },
+        error: (error) => {
+          console.log("sendMail: "+JSON.stringify(error));
+          reject(error);
+        }
+      });
+    });
   }
 
 }

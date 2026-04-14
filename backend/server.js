@@ -18,11 +18,17 @@ const transporter = nodemailer.createTransport({
     secure: false,     // port 25 = not SSL
     auth: {
         user: 'mail@damicoishima.com',
-        pass: ''
+        pass: 'P@ssw0rd7115'
     },
     tls: {
         ciphers: 'SSLv3'
     }
+    // host: "139.28.232.136",
+    // port: 25,
+    // secure: false,     // port 25 = not SSL
+    // tls: {
+    //     rejectUnauthorized: false   // important for internal SMTP
+    // }
 });
 
 app.use(cors());
@@ -32,7 +38,7 @@ app.use(express.json());
 app.post("/api/sendmail", upload.single('attachment'), async(req, res) => {
     try{
         const {name, subject, to, cc, bcc, body, attachment} = req.body;
-        console.log('Sent:',subject, to, cc, body);
+        // console.log('Sent:',subject, to, cc, body);
         const info = await transporter.sendMail({
             from: 'mail@damicoishima.com',
             to: to,

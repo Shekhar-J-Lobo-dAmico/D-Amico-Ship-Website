@@ -22,6 +22,7 @@ export class Careers {
   currentJob:any;
   keyReq:string="";
   enteredName:string="";
+  enteredAddr:string="";
   enteredMobi:string="";
   enteredMail:string="";
   enteredFile:any;
@@ -38,6 +39,9 @@ export class Careers {
     Validators.maxLength(10)
   ]);
 
+  mailBody:string='';
+  mailSent:any = null;
+
   constructor(private route:ActivatedRoute, private jobService:JobServices, private globalService:GlobalServices){}
   
   ngOnInit(){
@@ -49,17 +53,23 @@ export class Careers {
     });
   }
 
-  submit(){
-    this.isSubmitClicked=true;
-    this.isNameValid=this.enteredName!='';
-   
-    this.isMobiValid=this.enteredMobi.toString().length == 10;
+  async submit(){
+    try{
+      this.isSubmitClicked=true;
+      this.isNameValid=this.enteredName!='';
+    
+      this.isMobiValid=this.enteredMobi.toString().length == 10;
 
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    this.isMailValid = emailPattern.test(this.enteredMail);
-    this.isFileValid = this.enteredFile;
-    console.log(this.enteredFile);
-    this.sendMail();
+      const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      this.isMailValid = emailPattern.test(this.enteredMail);
+      this.isFileValid = this.enteredFile;
+      console.log(this.enteredFile);
+      if(this.isNameValid && this.isMobiValid && this.isMailValid && this.isFileValid)
+        await this.createMail();
+
+    }catch(err){
+      console.log(err)
+    }
   }
 
   onFileSelected(event: Event){
@@ -80,9 +90,29 @@ export class Careers {
     }
   }
 
-   sendMail(): Promise<any>{
+  async createMail(){
+    try{
+      this.mailBody='Dear HR,<br><br>'+
+            this.enteredName+' has applied against your job opening '+this.currentJob.pos+' at '+this.currentJob.location+' OFFICE at d\'Amico Ship Ishima India Private Limited. <br>Please find attached form.<br>'+
+            'Applicant details:<br>'+
+            'Name: '+this.enteredName+
+            '<br>Address: '+this.enteredAddr+
+            '<br>Mobile: '+this.enteredMobi+
+            '<br>Email: '+this.enteredMail+
+            '<br>Current Location: '+this.enteredAddr.split(',').pop()?.trim()+
+            '<br>Post Applied For: '+this.currentJob.pos+' at '+this.currentJob.location+ ' OFFICE <br><br>Best Regards,<br>Admin'; 
+    
+    const resp:any = await this.sendMail();
+    this.mailSent=resp?resp.status==true:false;
+    console.log(this.mailSent);
+    }catch(err){
+      console.log(err);
+    }
+  }
+
+  sendMail(): Promise<any>{
     return new Promise((resolve, reject)=>{
-      this.globalService.sendEmail(this.enteredName, "Test Subject", "lobo.s@damicoishima.com", "", "", "Test Body", this.enteredFile).subscribe({ //recruit.in
+      this.globalService.sendEmail(this.enteredName, "Test Mail - Shore Job Application", "recruit.in@damicoishima.com", "", "", this.mailBody, this.enteredFile).subscribe({ //recruit.in@damicoishima.com   lobo.s@damicoishima.com
         next: (response) => {
           console.log("Success", JSON.stringify(response));
           resolve(response);
