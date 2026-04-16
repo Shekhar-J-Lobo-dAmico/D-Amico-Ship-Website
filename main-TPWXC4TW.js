@@ -4099,7 +4099,7 @@ void main() {
 \u2022 Assist commercial team for Pre & Post fixture vetting clearances.
 \u2022 Preparing and follow up of assigned vessels for Sire Vetting and External Audits/PSC/Flag State etc, including completing operators\u2019 responses for close out.
 \u2022 Carryout annual Internal audits and ship Inspections for the assigned vessel.
-\u2022 Carries out regular vessel visits, including sailing visits, to confirm condition and compliance with company standards.`},{pos:"ASSISTANT TO MARINE SUPERINTENDENT FOR SQE and VETTING TASKS AT SHIP MANNING COMPANY",location:"Mumbai",department:"Marine",exp:"Minimum 1 year"},{pos:"TRAVEL EXECUTIVE FOR SHIP MANNING COMPANY",location:"Mumbai",department:"Travel Location",exp:"Minimum 2 years of experience in Shipping industry & similar activities",jd:`\u2022 To apply various type of visa of the joiners so as to carry out crew change at various port.
+\u2022 Carries out regular vessel visits, including sailing visits, to confirm condition and compliance with company standards.`},{pos:"ASSISTANT TO MARINE SUPERINTENDENT FOR SQE AND VETTING TASKS AT SHIP MANNING COMPANY",location:"Mumbai",department:"Marine",exp:"Minimum 1 year"},{pos:"TRAVEL EXECUTIVE FOR SHIP MANNING COMPANY",location:"Mumbai",department:"Travel Location",exp:"Minimum 2 years of experience in Shipping industry & similar activities",jd:`\u2022 To apply various type of visa of the joiners so as to carry out crew change at various port.
 \u2022 To arrange visa on arrival for the joiners.
 \u2022 To coordinate with branch offices to apply various visas.
 \u2022 To arrange appointments of the joiners with various consulates at various centers.
@@ -4108,7 +4108,7 @@ void main() {
 \u2022 To arrange transport for the candidate who are traveling from other centers & attending various types of course in mumbai.
 \u2022 To assist Travel Coordinator to carry crew change
 \u2022 Major handled visas are USA (C1/D, B1/B2 for Superintendent & Supernumerary) Netherlands, Belgium, France, Uk, Australia, Korea, China, Thailand, Canada Egypt.
-\u2022 At least 2 years of experience in Shipping industry & similar activities`},{pos:"Fleet Performance Analyst",location:"Mumbai",department:"Fleet Performance Monitoring & Decarbonization (FPM&D)",exp:"Atleast 0\u20133 Years in same / similar role",req:`\u2022 Bachelor\u2019s degree in Naval Architecture or Marine Engineering (mandatory), with a strong technical foundation in ship design, propulsion systems, and marine operations.
+\u2022 At least 2 years of experience in Shipping industry & similar activities`},{pos:"FLEET PERFORMANCE ANALYST",location:"Mumbai",department:"Fleet Performance Monitoring & Decarbonization (FPM&D)",exp:"Atleast 0\u20133 Years in same / similar role",req:`\u2022 Bachelor\u2019s degree in Naval Architecture or Marine Engineering (mandatory), with a strong technical foundation in ship design, propulsion systems, and marine operations.
 \u2022 Atleast 0\u20133 years of proven, hands-on experience in vessel performance analysis, preferably in a fleet performance, technical role within the maritime industry.
 \u2022 Solid understanding of vessel operations, hydrodynamics, and performance monitoring tools.
 \u2022 Hands-on experience with maritime compliance frameworks such as IMO DCS, EU MRV, SEEMP preparation, Fuel EU Maritime, and ESG reporting.
@@ -4120,7 +4120,7 @@ void main() {
 \u2022 Prepare and maintain SEEMP (Ship Energy Efficiency Management Plan) documentation and Biofouling Management Plans in line with regulatory requirements.
 \u2022 Conduct energy management assessments aligned with ISO 50001:2018 and support energy-related TMSA audit requirements.
 \u2022 Assist technical and HSQE teams during external audits (TMSA, Right Ship, Energy Management, etc.)
-\u2022 Track and report internal KPIs to support strategic decision-making by top management.`},{pos:"Ship Data Analyst",location:"Mumbai",department:"Fleet Performance Monitoring Department",atr:"The Ship Data Analyst will play a key role in monitoring and validating vessel technical data, ensuring compliance with international regulations, and supporting the company\u2019s sustainability and energy efficiency goals. This position involves managing vessel reports, analysing technical and operational data, and preparing regulatory submissions for emissions compliance.",req:`\u2022 Basic knowledge of shipping operations, technical parameters and ship data collection (Noon Reports).
+\u2022 Track and report internal KPIs to support strategic decision-making by top management.`},{pos:"SHIP DATA ANALYST",location:"Mumbai",department:"Fleet Performance Monitoring Department",atr:"The Ship Data Analyst will play a key role in monitoring and validating vessel technical data, ensuring compliance with international regulations, and supporting the company\u2019s sustainability and energy efficiency goals. This position involves managing vessel reports, analysing technical and operational data, and preparing regulatory submissions for emissions compliance.",req:`\u2022 Basic knowledge of shipping operations, technical parameters and ship data collection (Noon Reports).
 \u2022 Strong computer literacy with advanced proficiency in Excel, PowerPoint, Power BI and Share Point.
 \u2022 Excellent attention to detail and accuracy in data handling.
 \u2022 Strong organizational skills and ability to work independently as well as in a team environment.
@@ -4141,7 +4141,7 @@ void main() {
 \u2022 Conduct training sessions for Masters, Chief Engineers, and Officers on data reporting and compliance processes.
 6. Tools & Technology
 \u2022 Utilize weather analysis tools for weather validation.
-\u2022 Ensure accurate and timely data entry and reporting across systems.`},{pos:"Voyage Data Analyst",location:"Mumbai",exp:"1\u20133 years of experience in same/ similar role within the maritime industry",atr:"We are seeking a detail-oriented and analytical Voyage Data Analyst with experience in the maritime industry to support our fleet performance monitoring team. The ideal candidate will be responsible for collecting, analysing, and interpreting voyage-related data to ensure regulatory compliance, generate actionable insights, and support strategic decision-making across the fleet.",req:`\u2022 1\u20133 years of experience in same/ similar role within the maritime industry
+\u2022 Ensure accurate and timely data entry and reporting across systems.`},{pos:"VOYAGE DATA ANALYST",location:"Mumbai",exp:"1\u20133 years of experience in same/ similar role within the maritime industry",atr:"We are seeking a detail-oriented and analytical Voyage Data Analyst with experience in the maritime industry to support our fleet performance monitoring team. The ideal candidate will be responsible for collecting, analysing, and interpreting voyage-related data to ensure regulatory compliance, generate actionable insights, and support strategic decision-making across the fleet.",req:`\u2022 1\u20133 years of experience in same/ similar role within the maritime industry
 \u2022 Strong analytical and problem-solving skills with attention to detail
 \u2022 Proficiency in Microsoft Office Suite (Excel, Word, Outlook); experience with data visualization tools is a plus
 \u2022 Excellent communication skills in English, both written and verbal
@@ -4152,7 +4152,7 @@ void main() {
 \u2022 Collaborate with technical team to identify performance / data quality improvement opportunities
 \u2022 Ensure data accuracy and consistency across systems and reports
 \u2022 Support compliance with environmental and regulatory standards (e.g., IMO DCS, EU MRV, EU ETS, Fuel EU Maritime, ESG etc)
-\u2022 Assist in the implementation of data quality standards and best practices across the fleet`},{pos:"Documentation Assistant",location:"Mumbai",department:"Documentation ",exp:"Graduate or experience 1-2yrs in similar profile",atr:"We are currently looking for Documentation Assistant (Crewing), Mumbai Office.",req:`Graduate or experience 1-2yrs in similar profile.
+\u2022 Assist in the implementation of data quality standards and best practices across the fleet`},{pos:"DOCUMENTATION ASSISTANT",location:"Mumbai",department:"Documentation ",exp:"Graduate or experience 1-2yrs in similar profile",atr:"We are currently looking for Documentation Assistant (Crewing), Mumbai Office.",req:`Graduate or experience 1-2yrs in similar profile.
 \u2013 proficiency in computers specially Word/ Excel / Power Point with proficient typing speed
 \u2013 Excellent Communication Skills.
 \u2013 Must be able to work in a team based environment.
