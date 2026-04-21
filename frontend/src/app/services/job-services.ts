@@ -25,7 +25,7 @@ export class JobServices {
         '• Carryout annual Internal audits and ship Inspections for the assigned vessel.\n'+
         '• Carries out regular vessel visits, including sailing visits, to confirm condition and compliance with company standards.'
     },{
-      'pos':'ASSISTANT TO MARINE SUPERINTENDENT FOR SQE and VETTING TASKS AT SHIP MANNING COMPANY',
+      'pos':'ASSISTANT TO MARINE SUPERINTENDENT FOR SQE AND VETTING TASKS AT SHIP MANNING COMPANY',
       'location':'Mumbai',
       'department':'Marine',
       'exp':'Minimum 1 year',
@@ -45,7 +45,7 @@ export class JobServices {
             '• Major handled visas are USA (C1/D, B1/B2 for Superintendent & Supernumerary) Netherlands, Belgium, France, Uk, Australia, Korea, China, Thailand, Canada Egypt.\n'+
             '• At least 2 years of experience in Shipping industry & similar activities'
     },{
-      'pos':'Fleet Performance Analyst',
+      'pos':'FLEET PERFORMANCE ANALYST',
       'location':'Mumbai',
       'department':'Fleet Performance Monitoring & Decarbonization (FPM&D)',
       'exp':'Atleast 0–3 Years in same / similar role',
@@ -64,7 +64,7 @@ export class JobServices {
         '• Assist technical and HSQE teams during external audits (TMSA, Right Ship, Energy Management, etc.)\n'+
         '• Track and report internal KPIs to support strategic decision-making by top management.'
     },{
-      'pos':'Ship Data Analyst',
+      'pos':'SHIP DATA ANALYST',
       'location':'Mumbai',
       'department':'Fleet Performance Monitoring Department',
       'atr':'The Ship Data Analyst will play a key role in monitoring and validating vessel technical data, ensuring compliance with international regulations, and supporting the company’s sustainability and energy efficiency goals. This position involves managing vessel reports, analysing technical and operational data, and preparing regulatory submissions for emissions compliance.',
@@ -92,7 +92,7 @@ export class JobServices {
           '• Utilize weather analysis tools for weather validation.\n'+
           '• Ensure accurate and timely data entry and reporting across systems.'
     },{
-      'pos':'Voyage Data Analyst',
+      'pos':'VOYAGE DATA ANALYST',
       'location':'Mumbai',
       'exp':'1–3 years of experience in same/ similar role within the maritime industry',
       'atr':'We are seeking a detail-oriented and analytical Voyage Data Analyst with experience in the maritime industry to support our fleet performance monitoring team. The ideal candidate will be responsible for collecting, analysing, and interpreting voyage-related data to ensure regulatory compliance, generate actionable insights, and support strategic decision-making across the fleet.',
@@ -110,7 +110,7 @@ export class JobServices {
           '• Support compliance with environmental and regulatory standards (e.g., IMO DCS, EU MRV, EU ETS, Fuel EU Maritime, ESG etc)\n'+
           '• Assist in the implementation of data quality standards and best practices across the fleet'
     },{
-      'pos':'Documentation Assistant',
+      'pos':'DOCUMENTATION ASSISTANT',
       'location':'Mumbai',
       'department':'Documentation ',
       'exp':'Graduate or experience 1-2yrs in similar profile',

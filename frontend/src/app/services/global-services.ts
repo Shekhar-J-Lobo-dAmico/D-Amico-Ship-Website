@@ -24,10 +24,7 @@ export class GlobalServices {
       formData.append('attachment', attachment);
     }
 
-    return this.httpClient.post(
-      `${this.apiUrl}/api/sendmail`,
-      formData
-    );
+    return this.httpClient.post(`${this.apiUrl}/api/sendmail`, formData);
     // return this.httpClient.post(this.apiUrl+'/api/sendmail', {name, subject, to, cc, bcc, body, attachment});
   }
 }

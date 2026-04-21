@@ -21,7 +21,6 @@ export class ShorePersonnel {
     this.route.queryParamMap.subscribe((params) => {
       const req = params.get('req');
     });
-    
   }
 
   jobSelected(pos:string){
