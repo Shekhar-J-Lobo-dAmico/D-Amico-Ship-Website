@@ -6,7 +6,7 @@ const PORT = 8000;
 const PropertiesReader = require('properties-reader');
 // Send Email
 const nodemailer = require('nodemailer');
-
+const helmet = require('helmet');
 const upload = multer({
   storage: multer.memoryStorage(),   // keeps file in RAM (best for forwarding to AI)
   limits: { fileSize: 20 * 1024 * 1024 } // 20MB limit
@@ -33,7 +33,7 @@ const transporter = nodemailer.createTransport({
 
 app.use(cors());
 app.use(express.json());
-
+app.use(helmet());
 // Handle file upload
 app.post("/api/sendmail", upload.single('attachment'), async(req, res) => {
     try{

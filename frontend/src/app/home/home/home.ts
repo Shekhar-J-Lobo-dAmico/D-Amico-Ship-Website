@@ -83,7 +83,7 @@ export class Home implements AfterViewInit, OnDestroy{
 
     const texture =
       new THREE.TextureLoader()
-      .load('assets/img/aerial-view-container-cargo-ship-sea-2.jpeg');
+      .load('assets/img/cielo-di-tampa-10-20-16-108-ok.jpg');  //aerial-view-container-cargo-ship-sea-2.jpeg
 
     texture.wrapS = texture.wrapT =
       THREE.RepeatWrapping;
@@ -170,20 +170,20 @@ export class Home implements AfterViewInit, OnDestroy{
 
   private onMouseMove = (event:MouseEvent)=>{
 
-    const x = event.clientX/window.innerWidth;
-    const y = 1 - event.clientY/window.innerHeight;
+    // const x = event.clientX/window.innerWidth;
+    // const y = 1 - event.clientY/window.innerHeight;
 
-    const mat =
-      this.plane.material as THREE.ShaderMaterial;
+    // const mat =
+    //   this.plane.material as THREE.ShaderMaterial;
 
-    mat.uniforms['uMouse'].value.set(x,y);
-    mat.uniforms['uRippleStrength'].value = 1;
+    // mat.uniforms['uMouse'].value.set(x,y);
+    // mat.uniforms['uRippleStrength'].value = 1;
 
-    clearTimeout(this.rippleTimeout);
+    // clearTimeout(this.rippleTimeout);
 
-    this.rippleTimeout=setTimeout(()=>{
-      mat.uniforms['uRippleStrength'].value=0;
-    },600);
+    // this.rippleTimeout=setTimeout(()=>{
+    //   mat.uniforms['uRippleStrength'].value=0;
+    // },600);
   };
 
   /* ===================================================== */

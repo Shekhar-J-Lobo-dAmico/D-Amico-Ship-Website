@@ -42,13 +42,13 @@ export class OurTeamServices {
       'comment':'Fleet Personnel Manager'
     },
     {
-      'link':'assets/img/India-States-Map.png',
+      'link':'assets/img/employees/supriya.jpeg',
       'name':'Supriya Panchal',
       'designation':'HR',
       'comment':'HR MANAGER'
     },
     {
-      'link':'assets/img/India-States-Map.png',
+      'link':'assets/img/employees/CaptAnkurMittal.png',
       'name':'Capt Ankur Mittal',
       'designation':'Marine',
       'comment':'Marine Manager'
@@ -66,13 +66,13 @@ export class OurTeamServices {
       'comment':'Payroll Manager'
     },
     {
-      'link':'assets/img/India-States-Map.png',
+      'link':'assets/img/employees/AJAYSINGH.jpg',
       'name':'Ajay Singh',
       'designation':'PMS',
       'comment':'FLEX Manager'
     },
     {
-      'link':'assets/img/India-States-Map.png',
+      'link':'assets/img/employees/AJAY_MOHITE.jpg',
       'name':'Ajay Mohite',
       'designation':'PMS',
       'comment':'FLEX Expert (Deputy Manager)'
@@ -90,7 +90,7 @@ export class OurTeamServices {
       'comment':'Fleet Personnel Manager'
     },
     {
-      'link':'assets/img/India-States-Map.png',
+      'link':'assets/img/employees/Upendra.jpg',
       'name':'Upendranath Pandey',
       'designation':'Recruitment',
       'comment':'Fleet Personnel Manager'
@@ -114,7 +114,7 @@ export class OurTeamServices {
       'comment':'Fleet Crew Manager'
     },
     {
-      'link':'assets/img/India-States-Map.png',
+      'link':'assets/img/employees/Reshma.jpeg',
       'name':'Reshma Shetty',
       'designation':'Fleet',
       'comment':'Fleet Personnel Manager'
