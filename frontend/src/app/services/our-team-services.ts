@@ -116,7 +116,7 @@ export class OurTeamServices {
     {
       'link':'assets/img/employees/Reshma.jpeg',
       'name':'Reshma Shetty',
-      'designation':'Fleet',
+      'designation':'Fleet', 
       'comment':'Fleet Personnel Manager'
     },
     {

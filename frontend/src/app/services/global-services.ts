@@ -25,6 +25,7 @@ export class GlobalServices {
     }
 
     return this.httpClient.post(`${this.apiUrl}/api/sendmail`, formData);
+
     // return this.httpClient.post(this.apiUrl+'/api/sendmail', {name, subject, to, cc, bcc, body, attachment});
   }
 }

@@ -112,16 +112,20 @@ export class Careers {
 
   sendMail(): Promise<any>{
     return new Promise((resolve, reject)=>{
-      this.globalService.sendEmail(this.enteredName, "Test Mail - Shore Job Application", "recruit.in@damicoishima.com", "", "", this.mailBody, this.enteredFile).subscribe({ //recruit.in@damicoishima.com   lobo.s@damicoishima.com
-        next: (response) => {
-          console.log("Success", JSON.stringify(response));
-          resolve(response);
-        },
-        error: (error) => {
-          console.log("sendMail: "+JSON.stringify(error));
-          reject(error);
-        }
-      });
+      try{
+        this.globalService.sendEmail(this.enteredName, "Test Mail - Shore Job Application", "recruit.in@damicoishima.com", "", "", this.mailBody, this.enteredFile).subscribe({ //recruit.in@damicoishima.com   lobo.s@damicoishima.com
+          next: (response) => {
+            console.log("Success", JSON.stringify(response));
+            resolve(response);
+          },
+          error: (error) => {
+            console.log("sendMail: "+JSON.stringify(error));
+            reject(error);
+          }
+        });
+      }catch(err){
+        console.log(err);
+      }
     });
   }
 

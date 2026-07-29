@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class JobServices {
   public jobList:any[]=[
     {
-      'pos':'MARINE SUPERINTENDENT FOR HSSEQ AND VETTING ASSURANCE',
+      'pos':'MARINE SUPERINTENDENT FOR HSQE AND VETTING ASSURANCE',
       'location':'Mumbai',
       'department':'HSQE',
       'exp':'Minimum 1 year',
