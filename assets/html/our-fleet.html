@@ -10,7 +10,7 @@
   
 		<!-- Custom styles for this template-->
 		<!-- <link href="css/sb-admin-2.min.css" rel="stylesheet"> -->
-		<link href="../css/bootstrap.min.css" rel="stylesheet">
+		<link href="../css/bootstrap.css" rel="stylesheet">
 	</head>
 	<style>
 		body{
@@ -123,7 +123,7 @@
                 </div>
             </div>
 
-			<div id="popup" class="card text-white bg-info popup" style="max-width: fit-content;">
+			<div id="popup" class="card text-white bg-info popup" style="max-width: fit-content; color: #000000; -webkit-text-stroke: 0.5px #ffffff; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);">
 				<div id="cityName" class="card-header" style="width: 100%; text-align: center; font-size: 4vh;">Header</div>
 				<div class="card-body">
                     <b><div id="shipContainer"></div></b>
@@ -248,7 +248,7 @@
 
             {
                 name:"Singapore",
-                bg:"../img/wp14160024-singapore-marina-bay-sands-wallpapers.jpg",
+                bg:"../img/wp14160024-singapore-marina-bay-sands-wallpapers-1.jpg",
                 lat:1.3521,
                 lon:103.8198,
                 icon:"https://upload.wikimedia.org/wikipedia/commons/4/48/Flag_of_Singapore.svg",
@@ -389,7 +389,7 @@
                 const container = document.getElementById("shipContainer");
                 container.innerHTML = "";
 
-                const chunkSize = 10;
+                const chunkSize = 9;
 
                 if(list.length > 25){
 
