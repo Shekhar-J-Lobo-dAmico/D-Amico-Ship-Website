@@ -67,13 +67,11 @@ export class Home implements AfterViewInit, OnDestroy{
 
     /* ---------- LIGHT ---------- */
 
-    const hemi =
-      new THREE.HemisphereLight(0xffffff,0x444444,1.2);
+    const hemi = new THREE.HemisphereLight(0xffffff,0x444444,1.2);
 
     this.scene.add(hemi);
 
-    const dir =
-      new THREE.DirectionalLight(0xffffff,1);
+    const dir = new THREE.DirectionalLight(0xffffff,1);
 
     dir.position.set(5,10,7);
 
@@ -81,9 +79,7 @@ export class Home implements AfterViewInit, OnDestroy{
 
     /* ---------- TEXTURE ---------- */
 
-    const texture =
-      new THREE.TextureLoader()
-      .load('assets/img/cielo-di-tampa-10-20-16-108-ok.jpg');  //aerial-view-container-cargo-ship-sea-2.jpeg
+    const texture = new THREE.TextureLoader().load('assets/img/cielo-di-tampa-10-20-16-108-ok-1.jpg');  //aerial-view-container-cargo-ship-sea-2.jpeg
 
     texture.wrapS = texture.wrapT =
       THREE.RepeatWrapping;
@@ -170,20 +166,6 @@ export class Home implements AfterViewInit, OnDestroy{
 
   private onMouseMove = (event:MouseEvent)=>{
 
-    // const x = event.clientX/window.innerWidth;
-    // const y = 1 - event.clientY/window.innerHeight;
-
-    // const mat =
-    //   this.plane.material as THREE.ShaderMaterial;
-
-    // mat.uniforms['uMouse'].value.set(x,y);
-    // mat.uniforms['uRippleStrength'].value = 1;
-
-    // clearTimeout(this.rippleTimeout);
-
-    // this.rippleTimeout=setTimeout(()=>{
-    //   mat.uniforms['uRippleStrength'].value=0;
-    // },600);
   };
 
   /* ===================================================== */

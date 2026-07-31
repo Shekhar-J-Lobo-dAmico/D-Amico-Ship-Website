@@ -50,7 +50,8 @@ export class Start implements AfterViewInit{
   ngOnInit() {
     this.currentBg = this.getBg();
   }
- ngAfterViewInit(){
+  
+  ngAfterViewInit(){
     this.zone.runOutsideAngular(()=>{
         this.initThree();
         this.animate();

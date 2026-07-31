@@ -99,6 +99,7 @@ export class ShipPersonnel {
       const resp:any = await this.sendMail();
       this.mailSent=resp?resp.status==true:false;
       console.log(this.mailSent);
+      
     }catch(err){
       console.log(err);
     } 

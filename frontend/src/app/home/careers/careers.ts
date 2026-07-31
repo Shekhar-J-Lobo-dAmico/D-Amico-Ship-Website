@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { TopBanner } from '../../component/top-banner/top-banner';
 import { ActivatedRoute } from '@angular/router';
 import { JobServices } from '../../services/job-services';
@@ -42,7 +42,7 @@ export class Careers {
   mailBody:string='';
   mailSent:any = null;
 
-  constructor(private route:ActivatedRoute, private jobService:JobServices, private globalService:GlobalServices){}
+  constructor(private route:ActivatedRoute, private jobService:JobServices, private globalService:GlobalServices, private cd:ChangeDetectorRef){}
   
   ngOnInit(){
     this.route.queryParamMap.subscribe((params) => {
@@ -102,9 +102,10 @@ export class Careers {
             '<br>Current Location: '+this.enteredAddr.split(',').pop()?.trim()+
             '<br>Post Applied For: '+this.currentJob.pos+' at '+this.currentJob.location+ ' OFFICE <br><br>Best Regards,<br>Admin'; 
     
-    const resp:any = await this.sendMail();
-    this.mailSent=resp?resp.status==true:false;
-    console.log(this.mailSent);
+      const resp:any = await this.sendMail();
+      this.mailSent=resp?resp.status==true:false;
+      console.log(this.mailSent, this.isSubmitClicked);
+      this.cd.detectChanges();
     }catch(err){
       console.log(err);
     }

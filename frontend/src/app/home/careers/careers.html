@@ -49,7 +49,7 @@
         </div>
         <button type="submit" class="btn btn-primary" (click)="submit()">Submit</button>
         <div *ngIf="isSubmitClicked && mailSent" class="alert alert-dismissible alert-success">
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <button type="button" class="btn-close" (click)="isSubmitClicked=false"></button>
             <strong>Well done!</strong> Your application is successfully sent.
         </div>
     </fieldset>

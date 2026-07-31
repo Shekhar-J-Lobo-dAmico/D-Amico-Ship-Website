@@ -6,10 +6,12 @@
 
 @font-face {
     font-family: 'B074000D'; /* Choose a name for your font */
-    src: url('../../../assets/font/B074000D.TTF') format('truetype'); /* Specify the path and format */
+    src: url('../../../assets/font/B074000D.woff2') format('woff2'),
+       url('../../../assets/font/B074000D.TTF') format('truetype');  /* Specify the path and format */
     /* Optional: define font-weight and font-style if you have multiple files for different styles */
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }/* You can add global styles to this file, and also import other style files */
 
 html, body {
