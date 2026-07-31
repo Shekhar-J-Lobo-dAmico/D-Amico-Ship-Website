@@ -113,7 +113,7 @@ export class Careers {
   sendMail(): Promise<any>{
     return new Promise((resolve, reject)=>{
       try{
-        this.globalService.sendEmail(this.enteredName, "Test Mail - Shore Job Application", "recruit.in@damicoishima.com", "", "", this.mailBody, this.enteredFile).subscribe({ //recruit.in@damicoishima.com   lobo.s@damicoishima.com
+        this.globalService.sendEmail(this.enteredName, "Shore Job Application", "recruit.in@damicoishima.com", "", "", this.mailBody, this.enteredFile).subscribe({ //recruit.in@damicoishima.com   lobo.s@damicoishima.com
           next: (response) => {
             console.log("Success", JSON.stringify(response));
             resolve(response);

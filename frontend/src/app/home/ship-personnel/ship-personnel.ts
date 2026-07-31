@@ -94,8 +94,7 @@ export class ShipPersonnel {
   
   async createMail(){
     try{
-      this.mailBody='Dear HR,<br><br>'+
-           ' OFFICE <br><br>Best Regards,<br>Admin'; 
+      this.mailBody=''; 
     
       const resp:any = await this.sendMail();
       this.mailSent=resp?resp.status==true:false;
@@ -107,7 +106,7 @@ export class ShipPersonnel {
 
   sendMail(): Promise<any>{
     return new Promise((resolve, reject)=>{
-      this.globalService.sendEmail(this.enteredName, "Test Mail - Shore Job Application", "recruit.in@damicoishima.com", "", "", "", this.enteredFile).subscribe({ //recruit.in@damicoishima.com   lobo.s@damicoishima.com
+      this.globalService.sendEmail(this.enteredName, "Fleet Job Application", "recruit.in@damicoishima.com", "", "", "", this.enteredFile).subscribe({ //recruit.in@damicoishima.com   lobo.s@damicoishima.com
         next: (response) => {
           console.log("Success", JSON.stringify(response));
           resolve(response);

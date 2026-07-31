@@ -6,6 +6,11 @@ import { Injectable } from '@angular/core';
 export class EventServices {
   public events:any[]=[
     {
+      'link':'assets/img/events/2026.jpg',
+      'year': '2026',
+      'discription': 'Seminar held at Hotel Leela, Mumbai on 04th and 05th February 2026 with theme “Beyond the Horizon”'
+    },
+    {
       'link':'assets/img/events/2025.jpg',
       'year': '2025',
       'discription': 'Seminar held at Hotel Leela, Mumbai on 26th and 27th March 2025 with theme “FORGING AHEAD – Stronger, Safer, Smarter”.'

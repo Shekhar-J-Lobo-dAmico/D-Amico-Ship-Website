@@ -4,7 +4,7 @@
         <div class="row">
             <h2 class="col-xl-9 col-md-9 col-sm-12 mb-9">{{requirement}}</h2>
             <div class=" col-xl-3 col-md-3 col-sm-3 mb-3">
-                <a href="assets/documents/DSIPL - MANN - 8.5 - 01 - 01 - APPLICATION FORM.xls">
+                <a href="assets/documents/ApplicationformDamico-Dec25.xlsx" download="ApplicationformDamico-Dec25.xlsx" target="_self">
                     <button type="button" style="width: 100%;" class="btn btn-primary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" 
                     data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-bs-original-title="Popover Title">Download Application Form</button> 
                 </a>
@@ -47,7 +47,10 @@
             </div>
             <div>
                 <label for="exampleInputEmail1" class="form-label mt-4">Availability</label>
-                <input type="date" [(ngModel)]="enteredDate" class="form-control" placeholder="Availability"/>
+                <div class="date-input-container">
+                    <input type="date" [(ngModel)]="enteredDate" placeholder="Availability" class="form-control custom-date-input">
+                </div>
+
             </div>
             <div>
                 <label for="exampleInputEmail1" class="form-label mt-4">Nationality</label>
@@ -55,7 +58,7 @@
             </div>
             <div [ngClass]="isFileValid?'has-success':'has-danger'" style="margin-bottom: 20px;">
                 <label for="formFile" class="form-label mt-4">Upload Form *</label>
-                <input class="form-control" [ngClass]="isFileValid? 'is-valid' : isSubmitClicked? 'is-invalid':''" type="file" id="formFile" accept=".xls" (change)="onFileSelected($event)" >
+                <input class="form-control" [ngClass]="isFileValid? 'is-valid' : isSubmitClicked? 'is-invalid':''" type="file" id="formFile" accept=".xlsx" (change)="onFileSelected($event)" >
                 <div *ngIf="isFileValid && isSubmitClicked" class="valid-feedback">Success! You've done it.</div>
                 <div *ngIf="!isFileValid && isSubmitClicked" class="valid-invalid">Apologies, File not found. Try Again</div>
             </div>

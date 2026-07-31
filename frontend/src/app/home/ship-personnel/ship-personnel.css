@@ -5,3 +5,42 @@
     pointer-events: auto;
     overflow-y: scroll;
 }
+/* Container to relative position the icon overlay */
+.date-input-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+/* The actual date input box */
+.custom-date-input {
+  width: 100%;
+  padding: 10px 10px 10px 40px; /* Big left padding clears room for the icon */
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* 1. Hide the default native calendar icon on the right */
+.custom-date-input::-webkit-calendar-picker-indicator {
+  position: absolute;
+  left: 10px; /* Moves the clickable hit-area to the left edge */
+  width: 24px;
+  height: 24px;
+  opacity: 0; /* Hides the original visual icon */
+  cursor: pointer;
+  z-index: 2; /* Sits above our visual icon so clicks still open picker */
+}
+
+/* 2. Create the visual icon on the left using a pseudo-element */
+.date-input-container::before {
+  content: "📅"; /* Use an emoji or replace with a background SVG image */
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  pointer-events: none; /* Allows clicks to pass through to the indicator */
+  z-index: 1;
+}
