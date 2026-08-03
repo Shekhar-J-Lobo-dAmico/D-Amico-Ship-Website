@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { TopBanner } from '../../component/top-banner/top-banner';
 import { ActivatedRoute } from '@angular/router';
 import { JobServices } from '../../services/job-services';
@@ -42,7 +42,7 @@ export class ShipPersonnel {
   mailBody:string='';
   mailSent:any = null;
 
-  constructor(private jobServices:JobServices, private route:ActivatedRoute, private globalService:GlobalServices){}
+  constructor(private jobServices:JobServices, private route:ActivatedRoute, private globalService:GlobalServices, private cd:ChangeDetectorRef){}
 
   
   ngOnInit(){
@@ -80,7 +80,8 @@ export class ShipPersonnel {
     this.isMailValid = emailPattern.test(this.enteredMail);
     this.isPosiValid = this.selectedPosi;
     this.isFileValid = this.enteredFile;
-    console.log(this.enteredDate);
+    // console.log(this.enteredDate);
+    this.createMail();
   }
 
   onInput(event: Event, nextElement: HTMLInputElement) {
@@ -94,12 +95,12 @@ export class ShipPersonnel {
   
   async createMail(){
     try{
-      this.mailBody=''; 
-    
+      this.mailBody='';    
       const resp:any = await this.sendMail();
       this.mailSent=resp?resp.status==true:false;
       console.log(this.mailSent);
-      
+      this.cd.detectChanges();
+      this.isSubmitClicked = false;
     }catch(err){
       console.log(err);
     } 
@@ -107,7 +108,7 @@ export class ShipPersonnel {
 
   sendMail(): Promise<any>{
     return new Promise((resolve, reject)=>{
-      this.globalService.sendEmail(this.enteredName, "Fleet Job Application", "recruit.in@damicoishima.com", "", "", "", this.enteredFile).subscribe({ //recruit.in@damicoishima.com   lobo.s@damicoishima.com
+      this.globalService.sendEmail(this.enteredName, "Fleet Job Application",  this.requirement.includes('ROME')?"crew.in@damicoishima.com":"crewing@damicoishima.com", "", "", "", this.enteredFile).subscribe({ //recruit.in@damicoishima.com   lobo.s@damicoishima.com
         next: (response) => {
           console.log("Success", JSON.stringify(response));
           resolve(response);

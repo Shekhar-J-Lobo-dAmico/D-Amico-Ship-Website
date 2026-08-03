@@ -106,6 +106,7 @@ export class Careers {
       this.mailSent=resp?resp.status==true:false;
       console.log(this.mailSent, this.isSubmitClicked);
       this.cd.detectChanges();
+      this.isSubmitClicked = false;
     }catch(err){
       console.log(err);
     }

@@ -7,12 +7,12 @@ export class OurTeamServices {
   public teams:any[]=[
     {
       'link':'assets/img/employees/cptBudwal.jpg',
-      'name':'Capt Kulwant Singh Budwal',
+      'name':'Capt. Kulwant Singh Budwal',
       'designation':'Captain',
       'comment':'Director'
     },
     {
-      'link':'assets/img/India-States-Map.png',
+      'link':'assets/img/employees/captManoj.jfif',
       'name':'Capt. Manoj Kumar',
       'designation':'Fleet',
       'comment':'Fleet Crew Manager'
@@ -39,7 +39,7 @@ export class OurTeamServices {
       'link':'assets/img/India-States-Map.png',
       'name':'Hema Patial',
       'designation':'Fleet',
-      'comment':'Sr.Fleet Personnel Manager (Delhi)'
+      'comment':'Sr. Fleet Personnel Manager (Delhi)'
     },
     {
       'link':'assets/img/India-States-Map.png',

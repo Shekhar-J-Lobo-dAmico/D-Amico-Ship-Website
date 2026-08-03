@@ -62,7 +62,11 @@
                 <div *ngIf="isFileValid && isSubmitClicked" class="valid-feedback">Success! You've done it.</div>
                 <div *ngIf="!isFileValid && isSubmitClicked" class="valid-invalid">Apologies, File not found. Try Again</div>
             </div>
-            <button type="submit" class="btn btn-primary" (click)="submit()">Submit</button>
+            <button type="submit" class="btn btn-primary" (click)="submit()" [disabled]="isSubmitClicked">Submit</button>
+            <div *ngIf="isSubmitClicked && mailSent" class="alert alert-dismissible alert-success">
+                <button type="button" class="btn-close" (click)="isSubmitClicked=false"></button>
+                <strong>Well done!</strong> Your application is successfully sent.
+            </div>
         </fieldset>
         
         <br><br><br><br>
