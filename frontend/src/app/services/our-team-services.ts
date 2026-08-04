@@ -6,37 +6,37 @@ import { Injectable } from '@angular/core';
 export class OurTeamServices {
   public teams:any[]=[
     {
-      'link':'assets/img/employees/cptBudwal.jpg',
+      'link':'assets/img/employees/cptBudwal-1.JPG',
       'name':'Capt. Kulwant Singh Budwal',
-      'designation':'Captain',
+      'designation':'',
       'comment':'Director'
     },
     {
-      'link':'assets/img/employees/captManoj.jfif',
+      'link':'assets/img/employees/cptManoj.JPG',
       'name':'Capt. Manoj Kumar',
       'designation':'Fleet',
       'comment':'Fleet Crew Manager'
     },
     {
-      'link':'assets/img/India-States-Map.png',
+      'link':'assets/img/employees/cptYud.JPG',
       'name':'Capt. Yadvendra Singh',
       'designation':'Fleet',
-      'comment':'Fleet Crew Manager'
+      'comment':'Deputy General Manager'
     },
     {
-      'link':'assets/img/India-States-Map.png',
+      'link':'assets/img/employees/pankaj.png',
       'name':'Capt. Pankaj Nayak',
       'designation':'Training',
       'comment':'Training Manager'
     },
     {
-      'link':'assets/img/employees/srini.jpg',
+      'link':'assets/img/employees/srini.jpeg',
       'name':'V Srinivasan',
       'designation':'IT',
       'comment':'IT Manager'
     },
     {
-      'link':'assets/img/India-States-Map.png',
+      'link':'assets/img/employees/hema.jfif',
       'name':'Hema Patial',
       'designation':'Fleet',
       'comment':'Sr. Fleet Personnel Manager (Delhi)'
@@ -48,7 +48,7 @@ export class OurTeamServices {
       'comment':'Fleet Personnel Manager'
     },
     {
-      'link':'assets/img/employees/supriya.jpeg',
+      'link':'assets/img/employees/supriya.jpg',
       'name':'Supriya Panchal',
       'designation':'HR',
       'comment':'HR MANAGER'
@@ -84,13 +84,13 @@ export class OurTeamServices {
     //   'comment':'FLEX Expert (Deputy Manager)'
     // },
     {
-      'link':'assets/img/India-States-Map.png',
+      'link':'assets/img/employees/ray.jpg',
       'name':'Deependu Ray',
       'designation':'Recruitment',
       'comment':'Senior Fleet Personnel Manager'
     },
     {
-      'link':'assets/img/India-States-Map.png',
+      'link':'assets/img/employees/olwin.jpg',
       'name':'Olwin Dias',
       'designation':'Recruitment',
       'comment':'Fleet Personnel Manager'

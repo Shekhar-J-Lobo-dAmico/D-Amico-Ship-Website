@@ -2,7 +2,7 @@ import { ChangeDetectorRef, Component } from '@angular/core';
 import { TopBanner } from '../../component/top-banner/top-banner';
 import { ActivatedRoute } from '@angular/router';
 import { JobServices } from '../../services/job-services';
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { FormControl, FormsModule, Validators } from '@angular/forms';
 import { GlobalServices } from '../../services/global-services';
 
@@ -42,7 +42,7 @@ export class ShipPersonnel {
   mailBody:string='';
   mailSent:any = null;
 
-  constructor(private jobServices:JobServices, private route:ActivatedRoute, private globalService:GlobalServices, private cd:ChangeDetectorRef){}
+  constructor(private jobServices:JobServices, private route:ActivatedRoute, private globalService:GlobalServices, private cd:ChangeDetectorRef, private location:Location){}
 
   
   ngOnInit(){
@@ -119,6 +119,11 @@ export class ShipPersonnel {
         }
       });
     });
+  }
+
+  goBack(): void {
+    this.isSubmitClicked = false; // Reset your state variable
+    this.location.back();         // Navigate to the previous page
   }
      
 }

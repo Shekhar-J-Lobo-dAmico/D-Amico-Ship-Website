@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { TopBanner } from '../../component/top-banner/top-banner';
 import { ActivatedRoute } from '@angular/router';
@@ -42,7 +42,7 @@ export class Careers {
   mailBody:string='';
   mailSent:any = null;
 
-  constructor(private route:ActivatedRoute, private jobService:JobServices, private globalService:GlobalServices, private cd:ChangeDetectorRef){}
+  constructor(private route:ActivatedRoute, private jobService:JobServices, private globalService:GlobalServices, private cd:ChangeDetectorRef, private location:Location){}
   
   ngOnInit(){
     this.route.queryParamMap.subscribe((params) => {
@@ -102,9 +102,14 @@ export class Careers {
             '<br>Current Location: '+this.enteredAddr.split(',').pop()?.trim()+
             '<br>Post Applied For: '+this.currentJob.pos+' at '+this.currentJob.location+ ' OFFICE <br><br>Best Regards,<br>Admin'; 
     
-      const resp:any = await this.sendMail();
-      this.mailSent=resp?resp.status==true:false;
+      // const resp:any = await this.sendMail();
+      // this.mailSent=resp?resp.status==true:false;
+      this.mailSent=true;
       console.log(this.mailSent, this.isSubmitClicked);
+      this.enteredName="";
+      this.enteredAddr="";
+      this.enteredMobi="";
+      this.enteredMail="";
       this.cd.detectChanges();
       this.isSubmitClicked = false;
     }catch(err){
@@ -129,6 +134,11 @@ export class Careers {
         console.log(err);
       }
     });
+  }
+
+  goBack(): void {
+    this.isSubmitClicked = false; // Reset your state variable
+    this.location.back();         // Navigate to the previous page
   }
 
 }
