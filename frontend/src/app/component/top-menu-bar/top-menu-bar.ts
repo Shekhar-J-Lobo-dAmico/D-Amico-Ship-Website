@@ -27,6 +27,8 @@ export class TopMenuBar {
       this.activePage="ourteam";
     }else if(this.router.url.toString().includes('/careers') || this.router.url.toString().includes('/shorepersonnel')){
       this.activePage="careers";
+    }else if(this.router.url.toString().includes('/contactus')){
+      this.activePage="contactus";
     }else{
       this.activePage="home";
     }

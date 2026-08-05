@@ -10,6 +10,7 @@ import { Careers } from './home/careers/careers';
 import { ShorePersonnel } from './home/shore-personnel/shore-personnel';
 import { ShipPersonnel } from './home/ship-personnel/ship-personnel';
 import { Creators } from './home/creators/creators';
+import { Immediatereq } from './home/immediatereq/immediatereq';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'start', pathMatch: 'full' },
@@ -26,6 +27,7 @@ export const routes: Routes = [
         { path: 'shippersonnel', component: ShipPersonnel },
         { path: 'careers', component: Careers },
         { path: 'dev', component: Creators },
+        { path: 'immediatereq', component: Immediatereq },
         // more child routes...
         ]
     }

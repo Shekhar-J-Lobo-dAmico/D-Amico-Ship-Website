@@ -1,8 +1,8 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { TopBanner } from '../../component/top-banner/top-banner';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { JobServices } from '../../services/job-services';
-import { CommonModule, Location } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { FormControl, FormsModule, Validators } from '@angular/forms';
 import { GlobalServices } from '../../services/global-services';
 
@@ -42,7 +42,7 @@ export class ShipPersonnel {
   mailBody:string='';
   mailSent:any = null;
 
-  constructor(private jobServices:JobServices, private route:ActivatedRoute, private globalService:GlobalServices, private cd:ChangeDetectorRef, private location:Location){}
+  constructor(private jobServices:JobServices, private route:ActivatedRoute, private globalService:GlobalServices, private cd:ChangeDetectorRef, private router:Router){}
 
   
   ngOnInit(){
@@ -57,6 +57,10 @@ export class ShipPersonnel {
         this.requirement = "SINGAPORE FLEET IMMEDIATE REQUIREMENTS";
       }else if(req=="singGReq"){
         this.requirement = "SINGAPORE FLEET GENERAL REQUIREMENTS";
+      }
+      const pos = params.get('pos');
+      if(pos){
+        this.selectedPosi=pos;
       }
     });
   }
@@ -95,10 +99,17 @@ export class ShipPersonnel {
   
   async createMail(){
     try{
-      this.mailBody='';    
+      this.mailBody='Dear Madam/Sir,<br><br>'+
+            this.enteredName+' has applied for position of '+this.selectedPosi+'<br>Please find attached form.<br>'+
+            'Applicant details:<br>'+
+            'Name: '+this.enteredName+
+            '<br>Mobile: '+this.enteredMobi+
+            '<br>Email: '+this.enteredMail+
+            '<br>Availability: '+this.enteredDate+
+            '<br>Post Applied For: '+this.selectedPosi+ ' <br><br>Best Regards,<br>Admin';    
       const resp:any = await this.sendMail();
       this.mailSent=resp?resp.status==true:false;
-      console.log(this.mailSent);
+      console.log(this.mailBody);
       this.cd.detectChanges();
       this.isSubmitClicked = false;
     }catch(err){
@@ -108,7 +119,7 @@ export class ShipPersonnel {
 
   sendMail(): Promise<any>{
     return new Promise((resolve, reject)=>{
-      this.globalService.sendEmail(this.enteredName, "Fleet Job Application",  this.requirement.includes('ROME')?"crew.in@damicoishima.com":"crewing@damicoishima.com", "", "", "", this.enteredFile).subscribe({ //recruit.in@damicoishima.com   lobo.s@damicoishima.com
+      this.globalService.sendEmail(this.enteredName, "Fleet Job Application",  this.requirement.includes('ROME')?"mumbai@damicoishima.com":"hrsea@damicoishima.com", "", "", this.mailBody, this.enteredFile).subscribe({ //recruit.in@damicoishima.com   lobo.s@damicoishima.com
         next: (response) => {
           console.log("Success", JSON.stringify(response));
           resolve(response);
@@ -123,7 +134,7 @@ export class ShipPersonnel {
 
   goBack(): void {
     this.isSubmitClicked = false; // Reset your state variable
-    this.location.back();         // Navigate to the previous page
+    this.router.navigate(['/home']);
   }
      
 }

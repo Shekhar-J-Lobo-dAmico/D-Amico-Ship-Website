@@ -1,7 +1,7 @@
 <!-- Topbar -->
 <nav class="navbar navbar-expand-lg bg-light" data-bs-theme="light" [style.backgroundImage]="'url(' + currentBg + ')'" style="background-size: cover; background-repeat: no-repeat; background-position: center; ">
 	<div class="container-fluid">
-		<a class="navbar-brand" href="#"><img src="assets/img/damico_logo-removebg-preview_flag.png" style="width: auto;" height="30px"> </a>
+		<a class="navbar-brand" href="/home"><img src="assets/img/damico_logo-removebg-preview_flag.png" style="width: auto;" height="30px"> </a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 		</button>
@@ -60,9 +60,13 @@
 						<a class="dropdown-item" (click)="clickPage('shorepersonnel')">Shore Personnel</a>
 					</div>
 				</li>
+				<li class="nav-item">
+				<a class="nav-link"  [class.active]="activePage =='contactus'"  (click)="clickPage('contactus')" style="cursor: pointer;">Contact Us</a>
+					<span *ngIf="activePage =='contactus'" class="visually-hidden">(current)</span>
+				</li>
 			</ul>
 			<li class="nav-item d-flex">
-				<a class="nav-link" (click)="clickPage('contactus')">Contact Us</a>
+				<a class="nav-link twinkle-yellow" (click)="clickPage('immediatereq')">Immediate Requirement</a>
 			</li>
 			<!-- <div id="google_translate_element" class="nav-item dropdown"></div> -->
 		</div>

@@ -42,7 +42,7 @@ export class OurTeamServices {
       'comment':'Sr. Fleet Personnel Manager (Delhi)'
     },
     {
-      'link':'assets/img/India-States-Map.png',
+      'link':'assets/img/employees/vikass.jpg',
       'name':'Vikas Shinde',
       'designation':'Fleet',
       'comment':'Fleet Personnel Manager'
@@ -52,6 +52,18 @@ export class OurTeamServices {
       'name':'Supriya Panchal',
       'designation':'HR',
       'comment':'HR MANAGER'
+    },
+    {
+      'link':'assets/img/employees/roshan.jpeg',
+      'name':'Roshan Majithia',
+      'designation':'Crewing',
+      'comment':'Fleet Personnel Manager'
+    },
+    {
+      'link':'assets/img/employees/ulka.jpeg',
+      'name':'Ulka Padwal',
+      'designation':'Documentation',
+      'comment':'Fleet Personnel Officer'
     },
     // {
     //   'link':'assets/img/employees/CaptAnkurMittal.png',
@@ -65,12 +77,12 @@ export class OurTeamServices {
     //   'designation':'Marine',
     //   'comment':'Marine Manager'
     // },
-    {
-      'link':'assets/img/India-States-Map.png',
-      'name':'Vikas Shetty',
-      'designation':'Payroll',
-      'comment':'Payroll Manager'
-    },
+    // {
+    //   'link':'assets/img/India-States-Map.png',
+    //   'name':'Vikas Shetty',
+    //   'designation':'Payroll',
+    //   'comment':'Payroll Manager'
+    // },
     // {
     //   'link':'assets/img/employees/AJAYSINGH.jpg',
     //   'name':'Ajay Singh',

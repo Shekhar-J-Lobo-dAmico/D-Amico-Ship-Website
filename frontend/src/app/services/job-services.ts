@@ -169,4 +169,26 @@ export class JobServices {
       'location': ''
     }
   ];
+
+    public singJobList:any[]=[
+    {
+      'rank':'Master',
+      'location': ''
+    },{
+      'rank':'Chief Officer',
+      'location': ''
+    },{
+      'rank':'Chief Engineer',
+      'location': ''
+    },{
+      'rank':'Second Engineer',
+      'location': ''
+    },{
+      'rank':'A B',
+      'location': ''
+    },{
+      'rank':'Pumpman',
+      'location': ''
+    }
+  ];
 }

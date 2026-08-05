@@ -1,7 +1,7 @@
-import { CommonModule, Location } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { TopBanner } from '../../component/top-banner/top-banner';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { JobServices } from '../../services/job-services';
 import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { GlobalServices } from '../../services/global-services';
@@ -42,7 +42,7 @@ export class Careers {
   mailBody:string='';
   mailSent:any = null;
 
-  constructor(private route:ActivatedRoute, private jobService:JobServices, private globalService:GlobalServices, private cd:ChangeDetectorRef, private location:Location){}
+  constructor(private route:ActivatedRoute, private jobService:JobServices, private globalService:GlobalServices, private cd:ChangeDetectorRef, private router:Router){}
   
   ngOnInit(){
     this.route.queryParamMap.subscribe((params) => {
@@ -106,12 +106,7 @@ export class Careers {
       // this.mailSent=resp?resp.status==true:false;
       this.mailSent=true;
       console.log(this.mailSent, this.isSubmitClicked);
-      this.enteredName="";
-      this.enteredAddr="";
-      this.enteredMobi="";
-      this.enteredMail="";
       this.cd.detectChanges();
-      this.isSubmitClicked = false;
     }catch(err){
       console.log(err);
     }
@@ -138,7 +133,7 @@ export class Careers {
 
   goBack(): void {
     this.isSubmitClicked = false; // Reset your state variable
-    this.location.back();         // Navigate to the previous page
+    this.router.navigate(['/home']);
   }
 
 }

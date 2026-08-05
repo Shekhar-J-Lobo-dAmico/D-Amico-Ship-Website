@@ -48,6 +48,26 @@
         .dropdown-submenu:hover > .dropdown-menu {
             display: block;
             }
+
+        
+        .twinkle-yellow {
+        color: #05337d; /* Flat gold/yellow baseline color */
+        font-weight: bold;
+        /* Smoothly repeats the loop infinitely every 1.2 seconds */
+        animation: twinkleAnimation 1.2s infinite ease-in-out;
+        }
+
+        @keyframes twinkleAnimation {
+        0%, 100% {
+            opacity: 1;
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.8); /* Bright glow */
+        }
+        50% {
+            opacity: 0.3; /* Fades out slightly */
+            text-shadow: 0 0 2px rgba(255, 215, 0, 0.2); /* Dim glow */
+        }
+        }
+    
 	</style>
    <body>
 
@@ -56,7 +76,7 @@
 			<!-- Topbar -->
             <nav class="navbar navbar-expand-lg bg-light" data-bs-theme="light" style="position: sticky;">
 				<div class="container-fluid">
-					<a class="navbar-brand" href="#"><img src="../img/damico_logo-removebg-preview_flag.png" style="width: auto;" height="30px"> </a>
+					<a class="navbar-brand" href="/home"><img src="../img/damico_logo-removebg-preview_flag.png" style="width: auto;" height="30px"> </a>
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 					</button>
@@ -108,9 +128,13 @@
                                     <a class="dropdown-item" href="/home/shorepersonnel">Shore Personnel</a>
                                 </ul>
 							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/home/contactus">Contact Us</a>
+							</li>
 						</ul>
 						<li class="nav-item d-flex">
-							<a class="nav-link" data-section="contact-us" href="/home/contactus">Contact Us</a>
+							<!-- <a class="nav-link" data-section="contact-us" href="/home/contactus">Contact Us</a> -->
+                            <a class="nav-link twinkle-yellow" href="/home/immediatereq">Immediate Requirement</a>
 						</li>
 					</div>
 				</div>

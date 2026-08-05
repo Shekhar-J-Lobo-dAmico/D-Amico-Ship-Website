@@ -12,3 +12,21 @@
 .dropdown-submenu:hover > .dropdown-menu {
   display: block;
 }
+
+.twinkle-yellow {
+  color: #05337d; /* Flat gold/yellow baseline color */
+  font-weight: bold;
+  /* Smoothly repeats the loop infinitely every 1.2 seconds */
+  animation: twinkleAnimation 1.2s infinite ease-in-out;
+}
+
+@keyframes twinkleAnimation {
+  0%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.8); /* Bright glow */
+  }
+  50% {
+    opacity: 0.3; /* Fades out slightly */
+    text-shadow: 0 0 2px rgba(255, 215, 0, 0.2); /* Dim glow */
+  }
+}
