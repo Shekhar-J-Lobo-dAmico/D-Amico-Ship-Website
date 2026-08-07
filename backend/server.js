@@ -39,7 +39,7 @@ app.post("/api/sendmail", upload.single('attachment'), async(req, res) => {
     try{
         const {name, subject, to, cc, bcc, body, attachment} = req.body;
         // console.log('Sent:',subject, to, cc, body);
-        const info = await transporter.sendMail({
+        const mailOptions ={
             from: 'mail@damicoishima.com',
             to: to,
             subject: subject,
@@ -47,14 +47,18 @@ app.post("/api/sendmail", upload.single('attachment'), async(req, res) => {
             // text: body
             html: '<div>'+body+'</div>', 
 
-            attachments: [
-                {
-                    filename: req.file.originalname,
-                    path: req.file.path
-                }
-            ]
-        });
-        console.log('Sent:', info.messageId);
+            attachments: []
+        };
+        if (req.file) {
+            mailOptions.attachments.push({
+                filename: req.file.originalname,
+                path: req.file.path
+            });
+        }
+
+        const info = await transporter.sendMail(mailOptions);
+
+        console.log('Sent:', info.messageId, mailOptions.path);
         res.status(200).json({status: true});
     }catch(err){
         console.log("sendMail error: ",err);

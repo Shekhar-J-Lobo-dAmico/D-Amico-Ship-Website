@@ -66,7 +66,8 @@ export class Careers {
       console.log(this.enteredFile);
       if(this.isNameValid && this.isMobiValid && this.isMailValid && this.isFileValid)
         await this.createMail();
-
+      else
+        this.isSubmitClicked=false;
     }catch(err){
       console.log(err)
     }
@@ -102,9 +103,9 @@ export class Careers {
             '<br>Current Location: '+this.enteredAddr.split(',').pop()?.trim()+
             '<br>Post Applied For: '+this.currentJob.pos+' at '+this.currentJob.location+ ' OFFICE <br><br>Best Regards,<br>Admin'; 
     
-      // const resp:any = await this.sendMail();
-      // this.mailSent=resp?resp.status==true:false;
-      this.mailSent=true;
+      const resp:any = await this.sendMail();
+      this.mailSent=resp?resp.status==true:false;
+      // this.mailSent=true;
       console.log(this.mailSent, this.isSubmitClicked);
       this.cd.detectChanges();
     }catch(err){
@@ -115,7 +116,7 @@ export class Careers {
   sendMail(): Promise<any>{
     return new Promise((resolve, reject)=>{
       try{
-        this.globalService.sendEmail(this.enteredName, "Shore Job Application", "recruit.in@damicoishima.com", "", "", this.mailBody, this.enteredFile).subscribe({ //recruit.in@damicoishima.com   lobo.s@damicoishima.com
+        this.globalService.sendEmail(this.enteredName, "Shore Job Application", "lobo.s@damicoishima.com", "", "", this.mailBody, this.enteredFile).subscribe({ //   recruit.in@damicoishima.com
           next: (response) => {
             console.log("Success", JSON.stringify(response));
             resolve(response);

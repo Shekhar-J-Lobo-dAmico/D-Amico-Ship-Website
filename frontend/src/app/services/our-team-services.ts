@@ -14,13 +14,13 @@ export class OurTeamServices {
     {
       'link':'assets/img/employees/cptManoj.JPG',
       'name':'Capt. Manoj Kumar',
-      'designation':'Fleet',
+      'designation':'Crewing',
       'comment':'Fleet Crew Manager'
     },
     {
       'link':'assets/img/employees/cptYud.JPG',
       'name':'Capt. Yadvendra Singh',
-      'designation':'Fleet',
+      'designation':'Crewing',
       'comment':'Deputy General Manager'
     },
     {
@@ -36,34 +36,34 @@ export class OurTeamServices {
       'comment':'IT Manager'
     },
     {
-      'link':'assets/img/employees/hema.jfif',
-      'name':'Hema Patial',
-      'designation':'Fleet',
-      'comment':'Sr. Fleet Personnel Manager (Delhi)'
-    },
-    {
-      'link':'assets/img/employees/vikass.jpg',
-      'name':'Vikas Shinde',
-      'designation':'Fleet',
-      'comment':'Fleet Personnel Manager'
-    },
-    {
       'link':'assets/img/employees/supriya.jpg',
       'name':'Supriya Panchal',
       'designation':'HR',
       'comment':'HR MANAGER'
     },
     {
-      'link':'assets/img/employees/roshan.jpeg',
-      'name':'Roshan Majithia',
+      'link':'assets/img/employees/hema.jfif',
+      'name':'Hema Patial',
+      'designation':'Crewing',
+      'comment':'Sr. Fleet Personnel Manager (Delhi)'
+    },
+     {
+      'link':'assets/img/employees/ray.jpg',
+      'name':'Deependu Ray',
+      'designation':'Crewing',
+      'comment':'Senior Fleet Personnel Manager'
+    },
+    {
+      'link':'assets/img/employees/vikass.jpg',
+      'name':'Vikas Shinde',
       'designation':'Crewing',
       'comment':'Fleet Personnel Manager'
     },
     {
-      'link':'assets/img/employees/ulka.jpeg',
-      'name':'Ulka Padwal',
-      'designation':'Documentation',
-      'comment':'Fleet Personnel Officer'
+      'link':'assets/img/employees/roshan.jpeg',
+      'name':'Roshan Majithia',
+      'designation':'Crewing',
+      'comment':'Fleet Personnel Manager'
     },
     // {
     //   'link':'assets/img/employees/CaptAnkurMittal.png',
@@ -95,41 +95,41 @@ export class OurTeamServices {
     //   'designation':'PMS',
     //   'comment':'FLEX Expert (Deputy Manager)'
     // },
-    {
-      'link':'assets/img/employees/ray.jpg',
-      'name':'Deependu Ray',
-      'designation':'Recruitment',
-      'comment':'Senior Fleet Personnel Manager'
-    },
-    {
+   {
       'link':'assets/img/employees/olwin.jpg',
       'name':'Olwin Dias',
-      'designation':'Recruitment',
+      'designation':'Crewing',
       'comment':'Fleet Personnel Manager'
     },
     {
       'link':'assets/img/employees/Upendra.jpg',
       'name':'Upendranath Pandey',
-      'designation':'Recruitment',
+      'designation':'Crewing',
       'comment':'Fleet Personnel Manager'
     },
     {
       'link':'assets/img/employees/bhaskar.jpg',
       'name':'Bhaskar Sogam',
-      'designation':'Recruitment',
+      'designation':'Crewing',
       'comment':'Fleet Personnel Manager'
     },
     {
       'link':'assets/img/employees/anjali.jpeg',
       'name':'Anjali Kulkarni',
-      'designation':'Fleet',
+      'designation':'Crewing',
       'comment':'Fleet Personnel Manager'
     },
     {
       'link':'assets/img/employees/Reshma.jpeg',
       'name':'Reshma Shetty',
-      'designation':'Fleet', 
+      'designation':'Crewing', 
       'comment':'Fleet Personnel Manager'
+    },
+    {
+      'link':'assets/img/employees/ulka.jpeg',
+      'name':'Ulka Padwal',
+      'designation':'Crewing',
+      'comment':'Fleet Personnel Officer'
     },
     // {
     //   'link':'assets/img/India-States-Map.png',

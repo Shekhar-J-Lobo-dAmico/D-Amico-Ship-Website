@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class GlobalServices {
   constructor(private httpClient:HttpClient){}
 
-  private apiUrl = 'https://newsite.damicoishima.com';
+  private apiUrl = 'https://damicoishima.com';
 
   sendEmail(name:string, subject:string, to:string, cc:string, bcc:string, body:string, attachment:any){
     const formData = new FormData();
